@@ -1,0 +1,50 @@
+/* Blog */
+
+.qp-page-title {
+    @apply w-full;
+}
+
+.qp-page-title > h1 {
+    @apply text-3xl
+        py-4;
+}
+
+.qp-page-content {
+    @apply w-full;
+}
+
+.qp-page-item {
+    @apply flex flex-row justify-start;
+}
+
+.qp-page-item > .qp-page-featured-image {
+    @apply w-[33%];
+}
+
+.qp-page-excerpt {
+    @apply w-[66%]
+        my-12 p-8;
+}
+
+.qp-page-featured-image {
+    @apply w-full
+     my-12;
+}
+
+.qp-page-featured-image > img {
+    @apply w-full
+        max-h-[450px];
+}
+
+.qp-page-title {
+    @apply w-full;
+}
+
+.qp-page-meta {
+    @apply text-sm;
+}
+
+.qp-page-content {
+    @apply w-full
+        py-4;
+}

@@ -1,0 +1,57 @@
+/* 
+ * CSS - Default Theme
+ */
+
+@import "notifications.css";
+
+@import "layout.css";
+@import "header.css";
+@import "footer.css";
+
+@import "form.css";
+
+@import "blocks/card.css";
+@import "blocks/media-box.css";
+@import "blocks/quote.css";
+@import "blocks/pricing-card.css";
+@import "blocks/faq.css";
+
+@import "widgets/recent-posts.css";
+
+@import "homepage.css";
+@import "profile.css";
+@import "blog.css";
+@import "page.css";
+
+html,
+body {
+    @apply font-poppins;
+}
+
+p {
+    @apply pb-4;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    @apply font-semibold
+        py-4;
+}
+
+h1 {
+    @apply text-3xl;
+}
+
+h2 {
+    @apply text-2xl;
+}
+
+h3 {
+    @apply text-xl;
+}
+
+h4 {
+    @apply text-xl;
+}

@@ -1,0 +1,67 @@
+/* Form Elements */
+.qp-form {
+    @apply py-4;
+}
+
+.qp-form-container {
+    @apply w-full md:w-[75%] lg:w-[50%]
+        border border-slate-200
+        shadow-lg
+        p-4 md:p-12
+        mx-auto;
+}
+
+.qp-form-container > h2 {
+    @apply text-lg md:text-2xl font-semibold
+        text-center
+        pb-4 md:pb-8;
+}
+
+.qp-form-group {
+    @apply mb-2;
+}
+
+.qp-form-group > label {
+    @apply text-base font-semibold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    @apply w-full
+    px-4 py-2
+    my-2
+    border border-slate-300
+    focus:outline-none hover:outline-none;
+}
+
+.qp-form-select {
+    @apply w-full
+    px-2 py-2
+    my-2
+    border border-slate-300
+    focus:outline-none hover:outline-none;
+}
+
+/* Button */
+.btn {
+    @apply text-white font-medium text-sm
+        bg-purple-700 
+        hover:bg-purple-800 
+        focus:ring-4 focus:ring-purple-300 focus:outline-none
+        rounded-lg
+        px-4 lg:px-5 py-2 lg:py-2.5
+        sm:mr-2 lg:mr-0
+        dark:bg-purple-600 dark:hover:bg-purple-700 
+        dark:focus:ring-purple-800;
+}
+
+.btn:disabled {
+    @apply bg-purple-900
+        hover:bg-purple-900
+        focus:bg-purple-900
+        active:bg-purple-900;
+}

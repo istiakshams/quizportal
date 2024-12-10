@@ -1,0 +1,43 @@
+/* Blog */
+
+.qp-blog-item {
+    @apply flex flex-row justify-start;
+}
+
+.qp-blog-item > .qp-blog-featured-image {
+    @apply w-[33%];
+}
+
+.qp-blog-excerpt {
+    @apply w-[66%]
+        my-12 p-8;
+}
+
+.qp-blog-featured-image {
+    @apply w-full
+     my-12;
+}
+
+.qp-blog-featured-image > img {
+    @apply w-full
+        max-h-[450px];
+}
+
+.qp-blog-title {
+    @apply w-full;
+}
+
+.qp-blog-excerpt > h1,
+.qp-blog-title > h1 {
+    @apply text-3xl
+        py-4;
+}
+
+.qp-blog-meta {
+    @apply text-sm;
+}
+
+.qp-blog-content {
+    @apply w-full
+        py-4;
+}

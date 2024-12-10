@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Qubix Portal - A framework for developling SAAS using Laravel quick and easy</title>
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel='stylesheet'>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+</head>
+<body>
+    <div class="body-wrapper">
+        <!-- nav area -->
+        <div class="nav-wrapper">
+            <div class="logo-wrapper">
+                <h1 class="logo-title">Qubix Portal - A framework for developling SAAS using Laravel quick and easy</h1>
+            </div>
+            <div class="nav"
+                 id="nav">
+                <div class="nav-item active"><a class="main-nav-item"><i class="fas fa-cog"></i>Getting Started</a>
+                    <div class="sub-nav">
+                        <a class="sub-nav-item active" href="#introduction">Introduction</a>
+                        <a class="sub-nav-item" href="#server-requirements">Server Requirements</a>
+                        <a class="sub-nav-item" href="#create-database">Create Database</a>
+                        <a class="sub-nav-item" href="#install-on-server">Installation On Server</a>
+                        <a class="sub-nav-item" href="#install-on-localhost">Installation On Localhost</a>
+                        <a class="sub-nav-item" href="#update-version">Update Version</a>
+                        <a class="sub-nav-item" href="#file-permission">File Permissions</a>
+                        <a class="sub-nav-item" href="#laravel-packages">Packages</a>
+                    </div>
+                </div>
+
+                <div class="nav-item"><a class="main-nav-item"><i class="fas fa-cog"></i>Modules</a>
+                    <div class="sub-nav">
+                        <a class="sub-nav-item active" href="#module-subscriptions">Subscription & Payments</a>
+                        <a class="sub-nav-item" href="#module-newsletters">Newsletters</a>
+                        <a class="sub-nav-item" href="#module-support">Support</a>
+                        <a class="sub-nav-item" href="#module-affiliate">Affiliate</a>
+                        <a class="sub-nav-item" href="#module-reporting">Reporting</a>
+                    </div>
+                </div>
+
+                <div class="nav-item"><a class="main-nav-item"><i class="fab fa-google"></i>Social Login Setup</a>
+                    <div class="sub-nav">
+                        <a class="sub-nav-item" href="#google-login">Google Login</a>
+                        <a class="sub-nav-item" href="#facebook-login">Facebook Login</a>
+                    </div>
+                </div>
+
+                <div class="nav-item"><a class="main-nav-item"><i class="fas fa-palette"></i>Appearance</a>
+                    <div class="sub-nav">
+                        <a class="sub-nav-item" href="#system-logo">System Logo</a>
+                        <a class="sub-nav-item" href="#homepage">Homepage</a>
+                        <a class="sub-nav-item" href="#admin-logo">Admin Logo</a>
+                    </div>
+                </div>
+
+                <div class="nav-item"><a class="main-nav-item"><i class="fas fa-question"></i>How to Questions</a>
+                    <div class="sub-nav">
+                        <a class="sub-nav-item" href="#add-customer">Add Member</a>
+                        <a class="sub-nav-item" href="#language">Add New Language</a>
+                        <a class="sub-nav-item" href="#localizations">Add Localizations</a>
+                        <a class="sub-nav-item" href="#currency">Add New Currency</a>
+                        <a class="sub-nav-item" href="#subscriptions">Add Subscription Package</a>
+                        <a class="sub-nav-item" href="#subscriptions-settings">Subscription Setting</a>
+                        <a class="sub-nav-item" href="#cron-job">Cron Job</a>
+                        <a class="sub-nav-item" href="#storageManager">Storage Manager</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- content area -->
+        <div class="content-wrapper" id="content">
+            <!-- navbar -->
+            <div class="need-support">
+                <a href="https://qubixporal.istiakshams.com" target="_blank"><i class="fa fa-bullseye"></i>View demo</a>
+            </div>
+
+            <!-- Getting start -->
+            <div class="content-section" id="introduction" style="display: block;">
+                <h3>Introduction</h3>
+                <p>Qubix Portal - A framework for developling SAAS using Laravel quick and easy</p>                
+                <br />
+
+                <h3>Used Technologies</h3>
+                <ul>
+                    <li>Laravel</li>
+                    <li>Ajax</li>
+                    <li>jQuery</li>
+                    <li>AdminLTE 3</li>
+                </ul>
+
+                <h3>Core Features</h3>
+                <ul>
+                    <li>Blog Management</li>
+                    <li>Page Management</li>
+                    <li>Newsletters Management</li>
+                    <li>Reports Management</li>
+                    <li>Multi-currency</li>
+                    <li>Multilingual</li>
+                    <li>Media Manager</li>
+                    <li>User Management</li>
+                </ul>
+                                
+                <h3>Modules</h3>
+                <ul>
+                    <li>Support Ticket System</li>
+                    <li>Subscription and Packages Management</li>
+                    <li>Affiliate Management</li>
+                </ul>
+            </div>
+
+            <!-- server-requirements -->
+            <div class="content-section" id="server-requirements">
+                <h3>Server Requirements</h3>
+                <div class="content">
+                    <section class="callout-yellow">
+                        <p>If you are not sure about how to configure these settings, please contact your hosting provider.
+                        </p>
+                    </section>
+                    <ul>
+                        <li>Minimum PHP version 8.0 or greater.</li>
+                        <li>OpenSSL PHP Extension</li>
+                        <li>PDO PHP Extension</li>
+                        <li>Mbstring PHP Extension</li>
+                        <li>Tokenizer PHP Extension</li>
+                        <li>XML PHP Extension</li>
+                        <li>Ctype PHP Extension</li>
+                        <li>JSON PHP Extension</li>
+                        <li>ZIP PHP Extension</li>
+                        <li>FileInfo PHP Extension</li>
+                        <li>BCMath PHP Extension</li>
+                        <li style="color:red">Apache Server Recommended (nginx configuration and installation up to you, we don't provide support on that)</li>
+                    </ul>
+                    <h3 id="php-config">PHP configuration limits</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td> Setting </td>
+                                <td> Value </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> max_execution_time </td>
+                                <td> 300 </td>
+
+                            </tr>
+                            <tr>
+                                <td> max_input_time </td>
+                                <td> 300 </td>
+
+                            </tr>
+                            <tr>
+                                <td> memory_limit&nbsp; </td>
+                                <td> 1024M </td>
+
+                            </tr>
+                            <tr>
+                                <td> post_max_size </td>
+                                <td> 1024M </td>
+
+                            </tr>
+                            <tr>
+                                <td> upload_max_filesize </td>
+                                <td> 1024M <br> </td>
+
+                            </tr>
+                            <tr>
+                                <td> max_input_vars </td>
+                                <td> 2000+ <br> </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- upload files -->
+            <div class="content-section" id="upload-files">
+                <h3>Upload Files</h3>
+                <div class="content">
+                    <ul>
+                        <li><strong>Login to your cpanel</strong></li>
+                        <li class="ml-4">
+                            e.g “https://yourdomain.com/cpanel”
+                        </li>
+
+                        <li>Click "File Manager"</li>
+                        <li>
+                            Go to the "public_html" folder
+                        </li>
+                        <li>
+                            Upload here the "upload_this.zip" file
+                            which is in the downloaded file from
+                            “CodeCanyon”
+                        </li>
+                        <li>
+                            Go back to the "public_html" folder
+                        </li>
+                        <li>
+                            "Right click" on the Zip File, you will see
+                            some options there
+                        </li>
+                        <li>Now, Click on "Extract"</li>
+                        <li>
+                            Confirm Extract Files. The Zip File is now
+                            extracted successfully. You are all set to
+                            go to the next step
+                        </li>
+                        <li class="text-danger">
+                            <strong>Do not forget to delete "upload_this.zip"
+                                file after successful extraction.</strong>
+                        </li>
+                    </ul>
+
+                    <h3>Video Tutorial</h3>
+                    <p>
+                        You can follow the video below to get a good
+                        overview.
+                    </p>
+                    <iframe width="80%"
+                            height="500"
+                            src="https://www.youtube.com/embed/OezS7nd1AYA"
+                            frameborder="0"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope;"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- create-database -->
+            <div class="content-section" id="create-database">
+                <h3>Create Database</h3>
+                <div class="content">
+                    <ul>
+                        <li><strong>Login to your cpanel</strong></li>
+                        <li class="ml-4">
+                            e.g “https://yourdomain.com/cpanel”
+                        </li>
+                        <li>
+                            Type "MySQL" in the Search Box
+                        </li>
+                        <li>
+                            Select "MySQL Databases". A page will
+                            come
+                        </li>
+                        <li>
+                            Type database name in the input field and
+                            click "Create Database". A new page will come
+                            with successful notification
+                        </li>
+                        <li><strong>Click Go Back</strong></li>
+                        <li>
+                            Now create an user for the database. To
+                            create an user, scroll down to "MySQL Users"
+                            on the same page
+                        </li>
+                        <li>
+                            Insert Username & Password, Click Create
+                            User. A new page will come with successful
+                            notification. Click Go Back
+                        </li>
+                        <li>
+                            Now Add User to Database so that the user
+                            can use the database. Scroll down to "Add
+                            User to Database"
+                        </li>
+                        <li>
+                            Select the User & Database you just have
+                            created
+                        </li>
+                        <li>
+                            Click on "Add". A new page will come
+                        </li>
+                        <li>Click on "Make Changes"</li>
+                        <li>Click on Go Back</li>
+                    </ul>
+
+                    <h3>Video Tutorial</h3>
+                    <p>
+                        You can follow the video below to get a good
+                        overview.
+                    </p>
+                    <iframe width="80%"
+                            height="500"
+                            src="https://www.youtube.com/embed/LCJpC4IIUPw"
+                            frameborder="0"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope;"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- installation -->
+            <div class="content-section" id="install-on-server">
+                <h3>Installation On Server</h3>
+
+                <ul>
+                    <li>Navigate to the link below replacing "yourdomain" with your original domain
+                    </li>
+
+                    <li class="ml-4"><a href="http://yourdomain.com"
+                           target="_blank"
+                           class="text-dark font-weight-bold">http://yourdomain.com</a> <span class="text-danger">Or
+                            (for SSL) </span><a href="https://yourdomain.com"
+                           target="_blank"
+                           class="text-dark font-weight-bold">https://yourdomain.com</a> </li>
+
+                    <li>Click "Proceed to Next". A page will come.</li>
+                    <li>Check Your server Configuration</li>
+                    <li class="text-danger">If your php version does not match the requirement
+                        (8.0 =+), contact your server provider</li>
+                    <li class="text-danger">If your curl is not enabled, contact your server
+                        provider</li>
+                    <br>
+                    <li>Now you need to set Database Host, Database Name, Database Username, Database
+                        Password</li>
+                    <li class="ml-4"><strong>Database Host - Type “localhost”</strong></li>
+                    <li class="ml-4"><strong>Database Port - your_port (e.g 3306)</strong></li>
+                    <li class="ml-4"><strong>Database Name - yourdomain_databasename</strong></li>
+                    <li class="ml-4"><strong>Database Username - yourdomain_username</strong></li>
+                    <li class="ml-4"><strong>Password - Type the password of the user you created from MySQL
+                            Database</strong></li>
+
+                    <li><strong>Click Save the configuration</strong></li>
+                    <br>
+                    <li>Click on Run Migration</li>
+                    <li>Name, Email, Phone no, Password to create an Admin</li>
+                    <li><strong>Save and that's all, use your system.</strong></li>
+                </ul>
+
+                <h3>Video Tutorial</h3>
+                <p>You can follow the video below to get a good overview.</p>
+                <iframe width="80%"
+                        height="500"
+                        src="https://www.youtube.com/embed/ZKLqf1Nzl54"
+                        frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope;"
+                        allowfullscreen></iframe>
+
+
+            </div>
+
+            <!-- install-on-localhost -->
+            <div class="content-section" id="install-on-localhost">
+                <h3>Installation on Localhost</h3>
+                <h5 class="text-dark font-weight-bold">Step 1 - Copy Files</h5>
+                <ul>
+                    <li>Create a folder in your local server, name it <span class="text-info">"WriteBot"</span> (
+                        inside htdocs folder if you are using xampp
+                        )</li>
+                    <li>Copy and paste here the <span class="text-info">"upload_this.zip"</span> file which
+                        is in the downloaded file from “CodeCanyon”</li>
+                    <li>"Right click" on the Zip File</li>
+                    <li>"Extract here" the zip file</li>
+                </ul>
+
+                <h5 class="text-dark font-weight-bold">Step 2 - Create Database</h5>
+                <ul>
+                    <li>Start apache server</li>
+                    <li>Create a database in your local database, ( navigate to "localhost/phpmyadmin" if
+                        you are using xampp )</li> <br>
+                    <img src="./images/db.png"
+                         class="img-fluid w-75" />
+                </ul>
+
+                <br>
+                <h5 class="text-dark font-weight-bold">Step 3 - Install The System</h5>
+                <ul>
+                    <li>Navigate to the link below</li>
+                    <li class="ml-4"><a href="http://localhost/WriteBot"
+                           target="_blank"
+                           class="text-dark font-weight-bold">http://localhost/WriteBot</a></li>
+                    <li>A page will come. Follow the steps written there</li>
+                    <br>
+
+                    <li>You need to set Database Host, Database Port, Database Name, Database Username,
+                        Database Password</strong></li>
+                    <li class="ml-4"><strong>Database Host - Type “localhost”</strong></li>
+                    <li class="ml-4"><strong>Database Port - your_port (e.g 3306)</strong></li>
+                    <li class="ml-4"><strong>Database Name - databasename</strong></li>
+                    <li class="ml-4"><strong>Database Username - username (default "root")</strong></li>
+                    <li class="ml-4"><strong>Password - type your password ( keep password field blank if you didn't
+                            set any password )</strong></li>
+                    <li><strong>Click Save the configuration</strong></li>
+                    <br />
+
+                    <li>Click on Run Migration</li>
+                    <li>Name, Email, Phone no, Password to create an Admin</li>
+                    <li><strong>Save and that's all, use your system.</strong></li>
+
+                </ul>
+
+                <br>
+                <h3 id="thevideo">Video Tutorial</h3>
+                <p>You can follow the video below to get a good overview.</p>
+                <iframe width="80%"
+                        height="500"
+                        src="https://www.youtube.com/embed/8U1lheQAqjg"
+                        frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope;"
+                        allowfullscreen></iframe>
+
+            </div>
+            <!-- update version -->
+            <div class="content-section" id="update-version">
+                <h3>Update Application</h3>
+                    <ul>
+                        <li><strong>Login to the system as Admin</strong> </li>
+                        <li class="ml-4">https://yourdomain.com/dashboard/settings/update-system</li>
+                        <li><strong>Go to Manage Settings > Update</strong></li>
+                    </ul>
+                    <br>
+                    <img src="./images/system_update.png" alt="">
+                    <br>
+                    <br>
+                    <br>
+                    <h3>1 : One Click Update</h3>
+                    <ul>
+                        <li>
+                            <strong>Here Can see Current version and latest Veriosn</strong>
+                           <br> <span style="color: red;">Note : No need to downloaded zip file . Just click it, system will be updated himself automatically and <strong style="color: black;">Only Admin can do this</strong></span>
+                        </li>
+
+                    </ul>
+                    <br>
+                    <h3> 2 : Menual Update</h3>
+                    <img src="./images/manual_update.png" alt="">
+                    <br>
+                    <ul>
+                        <li>
+                            <strong class="text-danger" style="color:red">alert: If you are immediate latest version , download zip file and upload here </strong>
+                            <p style="color:red">If You skip any version and you want to update latest version it will be not work try to <strong>One Click update</strong></p>
+                            <p><span style="color:red">example</span> : your version 2.8.0 and latest version comming (2.9.0) then you can update it from here</p>
+                        </li>
+                        <li>
+                            Click on Proceed
+                        </li>
+                    </ul>
+                    <strong> If Your facing any issue <a href="https://themetags.ticksy.com/" target="_blank" rel="noopener noreferrer">contatc with us</a></strong>
+            </div>
+
+            <!-- File Permissions-->
+            <div class="content-section" id="file-permission">
+                <h3>Update File Permissions</h3>
+                <ul>
+                    <li>
+                        <strong>If you are using Shared Hosting & cPanel</strong>
+                    </li>
+                    <li class="ml-4">1. Go to your application directory & Folder</li>
+                    <li class="ml-4">2. Right-Click on Folder Name</li>
+                    <li class="ml-4">3. Check the boxes as per screenshots</li>
+                </ul>
+                <br>
+                <img src="./images/file-permissions/1.webp" loading="lazy" alt="">
+                <br>
+                <p>
+                    <ul>
+                        <li> <strong>Ex. Let's assume you are trying to give permission to your app folder as per image reference</strong> </li>
+                        <li> <strong> 1. You just have to right-click on app folder. </strong> </li>
+                        <li> <strong> 2. And you should see the list as image, Click on Change Permissions. </strong> </li>
+                    </ul>
+                </p>
+                <h3>After click on Change Permissions. </h3>
+                <img src="./images/file-permissions/2.png" loading="lazy" alt="">
+                <br>
+                <ul>
+                    <li> <strong>Just mark check all the boxes as image</strong> </li>
+                    <li> <strong style="color: red">Note : Same for file permissions(Ex. .php, .html, .css, .js, .yml, .png/jpg/webp/bimp/svg etc)</strong> </li>
+                </ul>
+                <br>
+                <hr>
+                <br>
+                <h3>If you are using Linux Server</h3>
+                <ul>
+                    <li><strong>1. To give permission on specific folder </strong></li>
+                    <li><strong>2. To give permission on specific file </strong></li>
+                </ul>
+                <br>
+                <img src="./images/file-permissions/3.png" loading="lazy" alt=""/>
+                <br>
+                <h3>1. To give permission on specific folder </h3>
+                    <code style="text-align: start">
+                    <pre>sudo chmod -R 777 /var/www/html/yourApplicationFolder/app</pre>
+                        <br>
+                    </code>
+                <ul>
+                    <li>
+                        <strong>
+                            Note: Here, sudo chmod -R 777 /var/www/html/yourApplicationFolder/app <br> <b>app</b> is a folder. And /var/www/html/html/yourApplicationFolder is a hosted directory
+                        </strong>
+                    </li>
+                </ul>
+                    <h3>2. To give permission on specific file </h3>
+                    <code>
+                    <pre>sudo chmod -R 777 /var/www/html/yourApplicationFolder/app/Http/Controllers/MyAppController.php</pre>
+                    <br>
+                    </code>
+                <ul>
+                    <li>
+                        <strong>
+                            Note: Here, sudo chmod -R 777 /var/www/html/yourApplicationFolder/app/Http/Controllers/MyAppController.php <br>
+                            <b>MyAppController</b> is a php file.
+                        </strong>
+                    </li>
+                </ul>
+                <strong> If Your facing any issue <a href="https://themetags.ticksy.com/" target="_blank" rel="noopener noreferrer">contatc with us</a></strong>
+            </div>
+
+            <!-- packages -->
+            <div class="content-section" id="laravel-packages">
+                <h3>Log Viewer</h3>
+                <div class="content">
+                    <section class="callout-yellow">
+                        <p>Go to <a href="https://log-viewer.opcodes.io/" target="_blank">Laravel Log Viewer Package</a></p>
+                        <h4>Installing the package via Composer</h4>
+                        <p>To install the package via composer, run:</p>
+                        <p><code>composer require opcodesio/log-viewer</code></p>
+                        <p>And publish the front-end assets by running:</p>
+                        <p><code>php artisan log-viewer:publish</code></p>
+                        <p>Once installed, the package is now ready to use! Just visit the /log-viewer route in your browser.</p>
+                        <p>For example: http://my-app.test/log-viewer.</p>
+                        <h4>Publishing the configuration</h4>
+                        <p>If you would like to configure the route, or to include additional log files, you can publish the configuration file by running:</p>
+                        <p><code>php artisan vendor:publish --tag="log-viewer-config"</code></p>
+                        <p>You can then find the configuration file at config/log-viewer.php.</p>
+                    </section>
+                </div>
+
+                <h3>Laravel Modules</h3>
+                <div class="content">
+                    <section class="callout-yellow">
+                        <p>Go to <a href="https://laravelmodules.com/docs/v11/installation-and-setup" target="_blank">Laravel Modules Package</a></p>
+                    </section>
+                </div>
+
+                <h3>Widgets</h3>
+                <div class="content">
+                    <section class="callout-yellow">
+                        <p>Go to <a href="https://github.com/arrilot/laravel-widgets" target="_blank">Laravel Widgets</a></p>                    
+                        
+                        <h4>Installation</h4>
+                        <p><code>composer require arrilot/laravel-widgets</code></p>
+                        <h4>Usage</h4>
+                        <p><code>php artisan make:widget RecentNews</code></p>
+                    </section>
+                </div>
+
+                <h3>Cookie Consent</h3>
+                <div class="content">
+                    <section class="callout-yellow">
+                        <p style="color:red; font-weight: 900;">IMPLEMENTATION REQUIRED</p>
+                        <p>Go to <a href="https://github.com/whitecube/laravel-cookie-consent" target="_blank">Laravel Cookie Consent</a></p>
+                    </section>
+                </div>
+                
+
+            </div>
+
+            <!-- social login google -->
+            <div class="content-section"
+                 id="google-login">
+                <h3>Social Login: Google App Setup</h3>
+                <strong>Sing in to continue to Google Cloud Platform</strong>
+                <p>Go to <a href="https://console.cloud.google.com/">https://console.cloud.google.com</a> and sing in to
+                    enter the Google Cloud console.
+                </p>
+                <strong>Create a project</strong>
+                <p>Click the project button in the top menu and you'll see the <strong>Select a project</strong> pop-up.
+                    Click the <strong>NEW PROJECT</strong> button create a project.</p>
+                <img src="./images/google/1.png"
+                     class="img-fluid">
+                <p>Enter the <strong>Project</strong> name and click the <strong>CREATE</strong> button.</p>
+                <img src="./images/google/2.png"
+                     class="img-fluid">
+                <strong>Start to configure the OAuth consent screen</strong>
+                <p> Once a project is created, go to <strong></strong>. Select <strong>Credentials</strong> from the
+                    left-side menu then
+                    click the <strong>CONFIGURE CONSENT SCREEN</strong> button.</p>
+
+                <img src="./images/google/3.png"
+                     class="img-fluid">
+                <img src="./images/google/4.png"
+                     class="img-fluid">
+                <p>Choose the <strong>External</strong> in the User Type options, then click the <strong>CREATE</strong>
+                    button.</p>
+                <img src="./images/google/5.png"
+                     class="img-fluid">
+                <h6>4. Edit app registration</h6>
+                <p>Enter the <strong>App name</strong>, <strong>User support email</strong>, upload<strong>App
+                        logo.</strong>
+
+                </p>
+
+                <p>Enter the <strong>Application home page, Application privacy policy link, Application terms and
+                        service
+                        link</strong>.</p>
+
+                <p> Enter your website <strong>domain</strong>.</p>
+
+                <p>Enter your contact <strong>Email addresses</strong>.</p>
+
+                <p> Continue to the next step by clicking the <strong>SAVE AND CONTINUE</strong> button.</p>
+                <img src="./images/google/6.png"
+                     class="img-fluid">
+                <p>You'll be on the step <strong>Scopes</strong>. Click the <strong>ADD OR REMOVE SCOPES</strong> button
+                    to select the scopes.</p>
+                <p>Select three required API Scopes:</p>
+
+                <ul>
+                    <li>.../auth/userinfo.email</li>
+                    <li>.../auth/userinfo.profile</li>
+                    <li>openid</li>
+                </ul>
+                <p>Once selected click on the <strong>UPDATE</strong> button.</p>
+
+                <img src="./images/google/7.png"
+                     class="img-fluid">
+                <p>The selected scopes will now appear on the Your non-sensitive scopes section.</p>
+
+                <p>Continue to the next step by clicking on the <strong>SAVE AND CONTINUE</strong> button.</p>
+                <img src="./images/google/8.png"
+                     class="img-fluid">
+                <p>You'll be on the step Summary that shows you the outline of your app registration. Click the
+                    <strong>BACK TO DASHBOARD</strong> button.
+                </p>
+                <img src="./images/google/9.png"
+                     class="img-fluid">
+                <p>Select <strong>Credentials</strong> from the left-side menu. Click the <strong>CREATE
+                        CREDENTIALS</strong> button and
+                    select the <strong>OAuth client ID</strong> item.</p>
+                <img src="./images/google/9-1.png"
+                     class="img-fluid">
+
+                <p>Once clicked, it'll take you to the Create <strong>OAuth client ID</strong> page.</p>
+                <p>Select the <strong>Web application</strong> option in the <strong>Application type</strong> . Enter a
+                    name of your OAuth 2.0 client in
+                    the <strong>Name</strong> field.</p>
+                <p>Enter allowed redirect URLs in the <strong>Authorized redirect URIs</strong> section.</p>
+                <ul>
+                    <li><a
+                           href="https://writebot.themetags.com/social-login/redirect/google">https://writebot.themetags.com/social-login/redirect/google</a>
+                    </li>
+                    <li><a
+                           href="https://writebot.themetags.com/social-login/google/callback">https://writebot.themetags.com/social-login/google/callback</a>
+                    </li>
+                </ul>
+                <p>Click the <strong>CREATE</strong> button.</p>
+                <img src="./images/google/10.png"
+                     class="img-fluid">
+
+                <p>Once you click the button, the <strong>OAuth client created</strong> pop-up will appear or you can
+                    see like this images of and you'll
+                    see your
+                    application keys.</p>
+                <img src="./images/google/11.png"
+                     class="img-fluid">
+
+                <p>Now got to writebot admin panel <strong>System setting</strong> Social media setting, Then
+                    input the <strong>Google Client ID and Google Client Secret</strong> id.</strong>
+                </p>
+                <img src="./images/google/12.png"
+                     class="img-fluid">
+
+            </div>
+            <div class="content-section"
+                 id="facebook-login">
+                <ul>
+                    <h3>&nbsp;Overview</h3>
+                    <p> This document provides instructions on properly setting up a Facebook application so that users
+                        can log in/register via Facebook on your site. You will need to purchase the <a
+                           href="https://ultimatemember.com/extensions/social-login/"
+                           target="_blank">social login
+                            extension</a> if you want users to log in via Facebook. </p>
+                    <h3>Creating a new app</h3>
+                    <ol>
+                        <li>You need to create a Facebook app to allow users to log in to your site with their Facebook
+                            account. To create a new Facebook app, please do the following:</li>
+                        <li>Go to the Facebook Developers site: <a href="https://developers.facebook.com/"
+                               target="_blank">https://developers.facebook.com/</a>.</li>
+                        <li>If you are not logged in, log in to the site using your Facebook account details.</li>
+                        <li>Once logged in, go to <strong>My Apps.
+                                <img src="./images/facebook/1.png"
+                                     class="img-fluid">
+                                <br>
+                            </strong></li>
+                        <li>Click on <strong>Create App</strong> button. It will lead you to the app
+                            creations&nbsp;page. <p>
+                                <img src="./images/facebook/2.png"
+                                     class="img-fluid">
+                            </p>
+                            <p> You'll be asked here " <strong>Which use case do you want to add to your app?"
+                                </strong>Select "<strong>Set up Facebook Login"&nbsp;</strong>then click on the
+                                <strong>Next</strong> button to continue.<img src="./images/facebook/3.png"
+                                     class="img-fluid">
+                            </p>
+                        </li>
+                        <li>Fill out the <strong>App Name</strong>, and&nbsp;<strong>App&nbsp;</strong><strong>Contact
+                                Email</strong>. Then&nbsp;click the&nbsp;<strong>Create App </strong>button.<br>
+                            <p>
+                                <img src="./images/facebook/4.png"
+                                     class="img-fluid">
+                            </p>
+                        </li>
+                        <section class="callout-blue">
+                            <em><strong>Note</strong>: After clicking the Create App button, you may be presented with a
+                                security check</em>
+                        </section>
+                        <div>
+                            <p> You will then&nbsp;get redirected to the App Dashboard&nbsp;page. On the left-side menu,
+                                go to <strong>Products</strong> </p>
+                            <p>
+                                <img src="./images/facebook/5.png"
+                                     class="img-fluid">
+                                <br>
+                                Click on <strong>Quickstart&nbsp;</strong>from
+                                the&nbsp;<strong>Configure</strong>&nbsp;drop-down in the&nbsp;<strong>Facebook
+                                    Login</strong>&nbsp;product.&nbsp;
+                            </p>
+                            <p> <img src="./images/facebook/6.png"
+                                     class="img-fluid">
+                            </p>
+                            <p> Select the <strong>Web</strong>&nbsp;from the platform if you want to add a Facebook
+                                login to your app. </p>
+                            <p> <img src="./images/facebook/7.png"
+                                     class="img-fluid">
+                            </p>
+                        </div>
+                        <p>Note: Add your website URL to the " <strong>Site URL</strong> " field as shown in the image
+                            below. Then click on
+                            the Save & Continue buttons.</p>
+                        <p> <img src="./images/facebook/8.png"
+                                 class="img-fluid"> </p>
+                        <h6> Setting up the app </h6>
+                        <p> After you've completed creating the app, head to the app's navigation menu. You need to do
+                            the&nbsp;steps below before your app setup is complete. </p>
+
+                        <strong>Go to App Review &gt; Request Permissions and Features</strong>
+                        <p> <img src="./images/facebook/10.png"
+                                 class="img-fluid"> </p>
+                        <p> When you click on the&nbsp; <strong>Request Permissions or Features </strong>button, you'll
+                            be redirected to Facebook Login Use Cases. You can set the permissions for scopes here.
+                            Add&nbsp;<strong style="background-color: initial;">public_profile</strong> and <strong
+                                    style="background-color: initial;">email </strong>permission by clicking on the
+                            <strong>"Add"</strong>&nbsp;button.&nbsp;
+                        </p>
+                        <p> <img src="./images/facebook/11.png"
+                                 class="img-fluid">
+                        </p>
+                        <h6>Go to Settings &gt; Basic&nbsp;</h6>
+                        <div>
+                            This tab contains the
+                            <strong> App ID</strong> and
+                            <strong>App Secret</strong>. Both must be copied and pasted later into the
+                            <strong>Ultimate Member&gt; Settings&gt;Extension&gt;Social Login&gt;Facebook Social Connect
+                                tab</strong>.&nbsp;You must fill in the following information:
+                            <strong> Privacy Policy URL</strong> and
+                            <strong>Terms of Service URL</strong>, and you can also include an app icon to make the app
+                            appear more professional.
+                        </div>
+                        <p> <img src="./images/facebook/12.png"
+                                 class="img-fluid">
+                        </p>
+                        <p> When you scroll down the page, you will find the <strong> Website </strong>section. Add
+                            your&nbsp;Site URL,&nbsp;then click the <strong>Save Changes</strong> button. </p>
+                        <p> <img src="./images/facebook/13.png"
+                                 class="img-fluid">
+                        </p>
+                        <h6>Go to Settings &gt; Advanced&nbsp;</h6>
+                        <p> <strong style="background-color: initial;">App Restrictions</strong> - You can restrict your
+                            app to a specific age range and countries if your site references alcohol or an adult nature
+                            site. </p>
+                        <p> <img src="./images/facebook/14.png"
+                                 class="img-fluid">
+                        </p>
+                        <p> <strong style="background-color: initial;">Security</strong> - These are optional if you
+                            wish to make the app more secure: </p>
+                        <p> <img src="./images/facebook/15.png"
+                                 class="img-fluid">
+                        </p>
+                        <p> <span style="background-color: initial;"></span> </p>
+                        <h3></h3>
+                        <h6>Go to Products&gt; Added Products&gt;Facebook Login &gt; Configure&gt;Settings</h6>
+                        <p> <strong style="background-color: initial;">Client OAuth Settings</strong> - You need to
+                            enter your site's login, register, and account's social tab URIs into the field "<strong
+                                    style="background-color: initial;">Valid OAuth redirect URIs</strong>." Add the
+                            custom
+                            page URL if you use the social login shortcode on the custom page.&nbsp; </p>
+                        <p> We recommend adding additional URLs with the parameter " <strong>return_provider</strong>"
+                            and "<strong>provider</strong>," see example: </p>
+
+                        <div>
+                            <p> <img src="./images/facebook/16.png"
+                                     class="img-fluid"> </p>
+                        </div>
+                        <div>
+                            To make the app live, you need to go to the navigation menu and click on
+                            <strong>"Go Live"</strong>
+                            <strong><br> </strong>
+                        </div>
+                        <p> <img src="./images/facebook/17.png"
+                                 class="img-fluid"> </p>
+                        <div>
+                            <strong><em>Note: Before switching to live mode, you must&nbsp;</em><em>complete all the
+                                    r</em></strong>
+                            <strong><em>equirements.</em></strong>
+                        </div>
+                        <div>
+                            <strong></strong>
+                        </div>
+                        <div>
+                            <p> When you complete the requirements, make sure to click on the <strong>"Go
+                                    Live"</strong>&nbsp;button on the bottom right corner of the page. </p>
+                        </div>
+                    </ol>
+                    <h4><img src="./images/facebook/19.png"
+                             class="img-fluid"><strong style="background-color: initial;">App Setup Complete</strong>
+                    </h4>
+                    <p> After you've done all of that, the app is complete. Add the <strong> App ID</strong> and
+                        <strong>App Secret</strong> to the Ultimate Member Settings Facebook tab.<br> <strong
+                                style="background-color: initial;"><br> Go to Meta for Developers &gt; Settings&gt;
+                            Basic&nbsp; </strong>then&nbsp;Copy the App ID and App Secret.<br>
+                    </p>
+                    <p> <img src="./images/facebook/18.png"
+                             class="img-fluid">
+                    </p>
+                    <p> Now got to writebot admin panel System setting Social media setting, Then input the
+                        <strong>Facebook App ID </strong> and <strong>Facebook App Secret</strong>.
+                    </p>
+                    <p> <img src="./images/facebook/20.png"
+                             class="img-fluid">
+                    </p>
+                </ul>
+            </div>
+
+            <!-- system logo -->
+            <div class="content-section"
+                 id="system-logo">
+                <h3>Change Logo</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+                    
+                    <li>
+                        <strong>Go to Appearance > Header</strong>
+                    </li>
+                    <li>
+                        <strong>Update the field with your changes</strong>
+                    </li>
+                    <li><strong>Click Save Changes</strong></li>
+                </ul>
+                <br>
+                <img src="./images/header.png"
+                     alt="">
+            </div>
+
+            <!-- homepage -->
+            <div class="content-section"
+                 id="homepage">
+                <h3>Configure Homepage</h3>
+                <p>Here you can configure all the sections of homepage of the website</p>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to Appearance &gt; Homepage</strong>
+                    </li>
+                    <li>
+                        <strong>Update the field with your changes</strong>
+                    </li>
+                </ul>
+                <br>
+                <img src="./images/home.png"
+                     alt="">
+            </div>
+
+            <!-- admin logo -->
+            <div class="content-section"
+                 id="admin-logo">
+                <h3>Change Admin Logo</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to System Settings > General Settings</strong>
+                    </li>
+                    <li>
+                        <strong>Update the field with your changes</strong>
+                    </li>
+                    <li><strong>Click Save Changes</strong></li>
+                </ul>
+                <br>
+                <img src="./images/admin-logo.png"
+                     alt="">
+            </div>
+
+            <!-- language -->
+            <div class="content-section"
+                 id="language">
+                <h3>Add New Language</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to System Settings > Multilingual Settings</strong>
+                    </li>
+                    <li>
+                        <strong>Fill the form with required data</strong>
+                    </li>
+                    <li>
+                        <strong>Click "Save Language"</strong>
+                    </li>
+                </ul>
+                <br>
+                <img src="./images/language.png"
+                     alt="">
+            </div>
+
+            <!-- localizations -->
+            <div class="content-section"
+                 id="localizations">
+                <h3>Add Localizations / Translations for a Language</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to System Settings > Multilingual Settings</strong>
+                    </li>
+
+                    <li>
+                        <strong>Click on three dots (...) of your targeted language</strong>
+                    </li>
+
+                    <li>
+                        <strong>Fill the form with translated data</strong>
+                    </li>
+
+                    <li>
+                        <strong>You can your Google Translator to translate the whole page & then click copy button to
+                            do it faster</strong>
+                    </li>
+
+                    <li>
+                        <strong>Click "Save"</strong>
+                    </li>
+                </ul>
+                <br>
+                <img src="./images/locale.png"
+                     alt="">
+            </div>
+
+            <!-- currency -->
+            <div class="content-section"
+                 id="currency">
+                <h3>Add New Currency</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to System Settings > Multi Currency Settings</strong>
+                    </li>
+                    <li>
+                        <strong>Fill the form with required data</strong>
+                    </li>
+                    <li>
+                        <strong>Click "Save Currency"</strong>
+                    </li>
+                </ul>
+                <br>
+                <img src="./images/currency.png"
+                     alt="">
+            </div>
+
+            <!-- openai -->
+            <div class="content-section"
+                 id="openai">
+                <h3>Configure AI Settings</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to AI Settings</strong>
+                    </li>
+                    <li>
+                        <strong>Fill the form with required data</strong>
+                    </li>
+                    <li>
+                        <strong>Click "Save Configuration"</strong>
+                    </li>
+                    <li>
+                        <strong>Check how you can get OPEN AI api key - <a
+                               href="https://www.howtogeek.com/885918/how-to-get-an-openai-api-key/"
+                               target="_blank"
+                               rel="noopener noreferrer">Check Here.</a></strong>
+                    </li>
+                </ul>
+                <br>
+                <img src="./images/openAi.png"
+                     alt="">
+            </div>
+
+            <!-- stable-diffusion -->
+            <div class="content-section"
+                 id="stable-diffusion">
+                <h3>Configure Stable Diffusion</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to AI Settings</strong>
+                    </li>
+                    <li>
+                        <strong>Fill the form with required data</strong>
+                    </li>
+                    <li>
+                        <strong>Click "Save Configuration"</strong>
+                    </li>
+                    <li>
+                        <strong>Check how you can get Stable Diffusion api key - <a
+                               href="https://platform.stability.ai/docs/getting-started/authentication"
+                               target="_blank"
+                               rel="noopener noreferrer">Check Here.</a></strong>
+                    </li>
+                </ul>
+                <br>
+                <img src="./images/sd.png"
+                     alt="">
+            </div>
+
+
+            <!-- gtts -->
+            <div class="content-section"
+                 id="gtts">
+                <h3>Google TTS Setup</h3>
+                <ul>
+                    <li class="ml-4">Navigate to - <a href="https://cloud.google.com"
+                           target="_blank">https://cloud.google.com</a></li>
+
+                    <li>
+                        <strong>Click "Console". (If you don't have a Google Cloud account, create a new one)</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts2.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Click "My Project"</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts3.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Click "NEW PROJECT"</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts4.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Enter the name of your project and click "Create".</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts5.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Click "My Project".</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts6.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Click on the project you just created.</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts7.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Click the "Search (/) for resources, docs, products, and more" field.</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts8.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Type "text-to-speech".</strong>
+
+                    </li>
+
+
+                    <li>
+                        <strong>Click "Cloud Text-to-Speech API".</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts9.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Click "ENABLE".</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts10.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>If you have not enabled billing in your Google Cloud account, you will be prompted to
+                            enable it, please fill in your information and enable billing.</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts11.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>After enabling billing, click "Enable" again.</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts12.png"
+                             alt="">
+                    </li>
+
+
+                    <li>
+                        <strong>After enabling Cloud Text-to-Speech API, you will be redirected to a page.</strong>
+                    </li>
+
+                    <li>
+                        <strong>Click "Credentials".</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts13.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Click "CREATE CREDENTIALS".</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts14.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Click "Service account".</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts15.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Click the "Service account name" field and enter the name of your project.</strong>
+                    </li>
+
+                    <li>
+                        <strong>Click the "Service account description" field and type "TTS Key".</strong>
+                    </li>
+
+                    <li>
+                        <strong>Click "CREATE AND CONTINUE"</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts16.png"
+                             alt="">
+                    </li>
+
+
+                    <li>
+                        <strong>Click "DONE"</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts17.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Click on the service account you just created from the "Service Accounts"
+                            section</strong>
+
+                    </li>
+
+                    <li>
+                        <strong>Click "KEYS"</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts18.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Click "ADD KEY"</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts19.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Click "Create new key"</strong>
+                    </li>
+
+                    <li>
+                        <strong>Select "JSON Recommended" option.</strong>
+                    </li>
+
+
+                    <li>
+                        <strong>Click "CREATE".</strong>
+                    </li>
+
+
+                    <li>
+                        <strong>After clicking Create, a JSON file will be downloaded to your computer. You can now
+                            close the Google Cloud Console..</strong>
+                    </li>
+
+                    <li>
+                        <strong>Now Login to your admin panel of Writebot. Goto Voice Settings & fill the form</strong>
+                        <br>
+                        <br>
+                        <img src="./images/gts20.png"
+                             alt="">
+                    </li>
+                    <li>
+                        <strong>Click "Save Configurations"</strong>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- azure -->
+            <div class="content-section"
+                 id="azure">
+                <h3>Azure TTS Setup</h3>
+                <ul>
+                    <li class="ml-4">Navigate to - <a href="https://azure.microsoft.com/en-us/"
+                           target="_blank">https://azure.microsoft.com/en-us/</a></li>
+
+                    <li>
+                        <strong>Create new account and afterwards sign in into your Azure Portal under your Profile on
+                            the top right corner.</strong>
+                    </li>
+
+                    <li>
+                        <strong>Click on Create a resource.</strong>
+                        <br>
+                        <br>
+                        <img src="./images/azure/1.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Search for keyword: speech and select the first Speech service from Azure.</strong>
+                        <br>
+                        <br>
+                        <img src="./images/azure/2.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Afterwards, click Create button.</strong>
+                        <br>
+                        <br>
+                        <img src="./images/azure/3.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Fill in the required information.</strong>
+                        <br>
+                        - <b>Name:</b> Any string to identify this resource
+                        <br>
+                        - <b>Subscription:</b> Free Trial (default)
+                        <br>
+                        - <b>Location:</b>select Azure region as you prefer. Warning! Not every language/voice is
+                        available in all Azure regions, we strongly recommend to consider either US East or West Europe
+                        regions.
+                        <br>
+                        - <b>Pricing Tier:</b> Free F0 is good for starting only, it has limitation in concurrency,
+                        refer to Azure Documentations to get exact numbers. Standard S0 will start billing.
+                        <br>
+                        - <b>Resource Group:</b> Any string to group your resources.
+
+                        <br>
+                        <br>
+                        <img src="./images/azure/4.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Almost there, on this the next page click on Click here to manage keys.</strong>
+                        <br>
+                        <br>
+                        <img src="./images/azure/5.png"
+                             alt="">
+                    </li>
+
+                    <li>
+                        <strong>Copy one of the keys.</strong>
+                        <br>
+                        <br>
+                        <img src="./images/azure/6.png"
+                             alt="">
+                    </li>
+
+
+                    <li>
+                        <strong>Now Login to your admin panel of Writebot. Goto Voice Settings & fill the azure
+                            form</strong>
+                        <br>
+                        <br>
+                        <img src="./images/azure/7.png"
+                             alt="">
+                    </li>
+                    <li>
+                        <strong>Click "Save Configurations"</strong>
+                    </li>
+
+                    <li>
+                        <strong>You can enable Azure or Google TTS from the top of the page</strong>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- multiple-api -->
+            <div class="content-section"
+                 id="multiple-api">
+                <h3>Add Multiple Api key (Open AI & Stable Diffusion)</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to AI Settings</strong>
+                    </li>
+                    <li>
+                        <strong>Click on Open AI Secret Key or Stable Diffusion</strong>
+                    </li>
+                    <li>
+                        <strong>Click on Create Multiple API key</strong>
+                    </li>
+                    <li>
+                        <strong>Click "Add New"</strong>
+                    </li>
+                    <li>
+                        <strong>Fill The Form</strong>
+                    </li>
+                    <li>
+                        <strong>Click "Save"</strong>
+                    </li>
+
+                </ul>
+                <br>
+                <img src="./images/multi-api.png"
+                     alt="">
+            </div>
+
+            <!-- Add Subscription Package -->
+            <div class="content-section"
+                 id="subscriptions">
+                <h3>Add Subscription Package</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to Subscriptions > Subscription Packages</strong>
+                    </li>
+                    <li>
+                        <strong>Click on the Type - Monthly / Yearly / Lifetime / Prepaid</strong>
+                    </li>
+                    <li>
+                        <strong>Click On Create New or Copy from existing</strong>
+                    </li>
+
+                    <li>
+                        <strong>Set your features by enabling & disabling (checkbox & switch)</strong>
+                    </li>
+                </ul>
+                <br>
+                <img src="./images/sp.png"
+                     alt="">
+            </div>
+            <!-- Subscription Settings -->
+            <div class="content-section"
+                 id="subscriptions-settings">
+                <h3>Subscription Settings</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to Subscriptions > Subscription Settings</strong>
+                    </li>
+                </ul>
+                <br>
+                <img src="./images/subscription-settings.png"
+                     alt="">
+                     <li>
+                        <strong>1 ).Balance Carry Forward</strong> : <span>Remaining balance from active package(only for active) will be added to next package balance. This service is applicable for same package - Lifetime to Lifetime, Yearly to Yearly, Monthly to Monthly and Prepaid to Prepaid pacakge.</span>
+                    </li>
+                    <li>
+                        <strong>2 ).New package Purchase Settigns</strong> : <span> if enable, running package expire when purchase to new package</span>
+                    </li>
+
+                    <li>
+                        <strong>3 ).Auto Subscription</strong>:
+                        Allow user to <strong> cancel Auto Subscription</strong>: if enable, user can cancel auto recurring payment if purchase from paypal <br>
+                        Allow user to <strong>Active Auto Subscription</strong> : if enable, user can Active auto recurring payment if purchase from paypal
+                    </li>
+                    <li>
+                        <strong>4 ).Create Auto Renew Subscription Product</strong>:
+                        <p>Here Can Create Auto Renewal Product for payment Gateway and customer / user enable recurring payment option don't need buy again.</p>
+                        <p> note: here onlye show which package not added into gateway product. you can see all product and plan into your gateway dashbaord. now only <strong>Paypal</strong> available for this feature.</p>
+                    </li>
+            </div>
+
+            <!-- Add unlimited Package -->
+            <div class="content-section"
+                 id="unlimited">
+                <h3>Unlimited Package Balance</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to Subscriptions > Subscription Packages</strong>
+                    </li>
+                    <li>
+                        Check the unlimited option
+                    </li>
+                    <li>
+                        <strong>Unlimited balance is added to user only when the customer subscribe or Renew a
+                            subscription package</strong>
+                    </li>
+                </ul>
+                <br>
+                <img src="./images/unlimited.png"
+                     alt="">
+            </div>
+            <!-- Cron Job -->
+            <div class="content-section"
+                 id="cron-job">
+                <h3>Cron Job</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to System Settings > Cron Job</strong>
+                    </li>
+
+                    <li>
+                        <strong>Cron will run every day at 12 AM</strong>
+                    </li>
+
+                    <li><a href="https://blog.cpanel.com/how-to-configure-a-cron-job/">How To Configure a Cron Job</a>
+                    </li>
+                </ul>
+                <br>
+                <img src="./images/crn.png"
+                     alt="">
+            </div>
+
+            <!-- Offline Payment -->
+            <div class="content-section"
+                 id="offline-payment">
+                <h3>Add Offline Payment</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to System Settings > Offline Payment</strong>
+                    </li>
+
+
+                    <li>
+                        Add name & description of the payment account details & process
+                    </li>
+
+                    <li>
+                        Save Offline Payment
+                    </li>
+
+                </ul>
+                <br>
+                <img src="./images/addOff.png"
+                     alt="">
+                <br>
+                <br>
+                <br>
+
+                <h3>Enable Offline Payment</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to System Settings > Payment Methods</strong>
+                    </li>
+
+
+                    <li>
+                        Click on Box of Offline Payment Method
+                    </li>
+
+                    <li>
+                        Enable It
+                    </li>
+
+                </ul>
+                <br>
+                <img src="./images/enableOff.png"
+                     alt="">
+
+                <br>
+                <br>
+                <br>
+
+                <h3>Make Offline Payment</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Customer</strong>
+                    </li>
+
+
+                    <li>
+                        Go to Subscription Packages
+                    </li>
+
+
+                    <li>
+                        Click on Subscribe Button
+                    </li>
+
+                    <li>
+                        Click On the Offline Payment Gateway
+                    </li>
+
+                </ul>
+                <br>
+                <img src="./images/makeOfflinepayment.png"
+                     alt="">
+                <br>
+                <ul>
+                    <li>
+                        <strong>Fill the form</strong>
+                    </li>
+
+                    <li>
+                        Click on Proceed
+                    </li>
+                </ul>
+
+                <br>
+                <img src="./images/offlineProceed.png"
+                     alt="">
+            </div>
+
+            <!-- nayem -->
+            <div class="content-section"
+                 id="payment-request">
+                <h3>Payment Request</h3>
+                <strong>Go to Subscription > Payment Request</strong>
+                </li>
+                </ul>
+                <br>
+                <p>After Customer Purchase Package Using Offline Payment Method Here showing all as Pending Status and
+                    Admin Can Changes Status as Below Steps</p>
+                <img src="./images/pr_1.png"
+                     alt="">
+
+                <ul>
+                    <li>
+                        <strong>1. Approve :</strong>
+                        If Click Approve , Package will be approved and if its first package it
+                        will be <strong>active</strong> other wise status <strong>Subscribed</strong>
+                    </li>
+                    <li>
+                        <strong>2. View :</strong> Can View if pay from Offline Method
+                    </li>
+                    <li>
+                        <strong>3. Reject :</strong> Can Reject if pay from Offline Method
+                    </li>
+                    <li>
+                        <strong>4. Add Note :</strong> Admin Can Add Note if admin think something missing from customer
+                        / wrong info provide custom. When <strong>Add Note</strong> status will be
+                        <strong>incomplete</strong> and customer Can Edit Option for re-submit payment request
+                    </li>
+
+
+                </ul>
+                <hr>
+                <h4>Customer panel</h4>
+                <img src="./images/cs_pr_1.png"
+                     alt="">
+                <ul>
+                    <li>
+                        <strong>1. Pending :</strong>After Offline Payment status <strong>Pending</strong>
+                    </li>
+                    <li>
+                        <strong>2. Subscribed :</strong>After Offline Payment status
+                    </li>
+                    <li>
+                        <strong>3. Delete :</strong> Until Admin active Customer Can <strong>Delete </strong>
+                    </li>
+                    <li>
+                        <strong>4.View :</strong> Can View Offline Payment Details
+                    </li>
+
+
+                </ul>
+                <p>After Admin <strong>Add Note</strong></p>
+                <img src="./images/add_note.png"
+                     alt="">
+                <ul>
+                    <li>
+                        After Admin <strong>Add Note</strong> status <strong>incomplete</strong> and have an option to
+                        re-submit
+                    </li>
+
+
+
+                </ul>
+                <p>After Admin <strong>approved</strong> and Customer have an already <strong>active</strong> package
+                </p>
+                <img src="./images/active_now.png"
+                     alt="">
+                <ul>
+                    <li>
+                        <strong> 1 Active Now : </strong> if Click , Package will be active and previous package will be
+                        <strong>Expire</strong>
+
+                    </li>
+
+
+
+                </ul>
+            </div>
+            <div class="content-section"
+                 id="add-customer">
+                <h3>Add Customer</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to Dashboard > Customers</strong>
+                    </li>
+
+
+                </ul>
+                <br>
+
+                <img src="./images/customer_list.png"
+                     alt="">
+                <h2 class="text-center">1:Customer</h2>
+
+                <img src="./images/add_customer.png"
+                     alt="">
+                <ul>
+                    <li>
+                        <strong>1. Add Customer :</strong>
+                        Fill up the all field and If package have no price put zero(0)</strong>
+                    </li>
+                </ul>
+                <hr>
+                <h4> <strong>2</strong>Assign Package</h4>
+                <img src="./images/assign_package.png"
+                     alt="">
+                <ul>
+                    <li>
+                        If Check <strong>Active Now </strong> package automatically Active and previous package will be
+                        <strong>Expire</strong>
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+            <!-- end -->
+            <div class="content-section"
+                 id="trainAi">
+                <h3>Train AI ChatBot</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to AI Chat</strong>
+                    </li>
+
+                    <li>Click on Browse Expert</li>
+                </ul>
+                <br>
+
+                <img src="./images/aiTrain.png"
+                     alt="">
+
+                <br>
+
+                <ul>
+                    <li>Click on Edit icon of expert</li>
+                    <li>Click on Train Expert</li>
+                </ul>
+                <img src="./images/trainExpert.png"
+                     alt="">
+                <ul>
+                    <li>
+                        Click on generate test data to see example json data format. You have to add questions & answer
+                        in this format
+                    </li>
+                    <li>
+                        There are 3 different roles you can use when training your chatbot: User, Assistant and System.
+
+                        <ol>
+                            <li><strong>User:</strong> The User role is responsible for the human input or messages in
+                                the conversation. Users interact with ChatGPT by asking questions, making requests, or
+                                providing prompts. They initiate the conversation and provide context for the Assistant
+                                to generate relevant replies.</li>
+                            <li><strong>Assistant:</strong> The Assistant role represents the language model (e.g.,
+                                ChatGPT) that generates responses based on user messages. It uses its training on vast
+                                amounts of text data to understand the user’s input, generate coherent and relevant
+                                responses, and maintain the conversation flow. The Assistant aims to assist, provide
+                                information, and engage in conversation with the user.</li>
+                            <li><strong>System:</strong> The System role involves instructions or guidance given to the
+                                Assistant to influence its behavior during the conversation. System messages are
+                                introduced by external systems or rules and are not based on user input. They serve to
+                                provide instructions, clarify context, or guide the Assistant’s responses. System
+                                messages help steer the conversation or modify the Assistant’s behavior to achieve
+                                desired outcomes.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="content-section"
+                 id="storageManager">
+                <h3>storage Manager</h3>
+                <ul>
+                    <li>
+                        <strong>Login to the system as Admin</strong>
+                    </li>
+                    <li class="ml-4">https://yourdomain.com/dashboard</li>
+
+                    <li>
+                        <strong>Go to System Settings</strong>
+                    </li>
+
+                    <li>Click on Storage Manager</li>
+                </ul>
+                <br>
+
+                <img src="./images/storage_manager.png"
+                     alt="">
+
+                <br>
+
+                <ul>
+                    <span class="text-error"
+                          style="color: red;">AWS storage uses for Text to Speech and Genearet Image</span>
+                    <li><strong>Active Storage</strong></li>
+                    <li>
+                        <strong>AWS Configuration</strong>
+                        <p>
+
+                            <a href="https://www.youtube.com/watch?v=FLIp6BLtwjk"
+                               target="_blank"
+                               rel="noopener noreferrer">How to create & IAM permissions here</a> .
+                            AWS Configuration Within AWS, you need to do 2 things: <br>
+
+                            Create a bucket within the S3 service <br>
+                            Create an IAM User to get a Key/Secret Key, <br> and then attach a Policy to that user that
+                            allows access to the S3 API.
+                            Like anything in AWS, creating a bucket in S3 involves looking at a ton of configuration
+                            options and wondering if you need any of them. For most use cases, you don't!
+
+                            Head to the S3 console, create a bucket name (it has to be globally unique, not just unique
+                            to your AWS account), choose the region you operate in, and leave all the defaults
+                            (including the ones that labeled "Block Public Access settings for this bucket").
+
+                            Yes, some of these options are ones you may want to use, but you can choose them later.
+
+                            After creating a bucket, we need permission to do things to it. Let's pretend we created a
+                            bucket named "my-awesome-bucket".
+
+                            We can create an IAM User, select "programmatic access", but don't attach any policies or
+                            setup anything else. Make sure to record the secret access key, as they'll only show it
+                            once.
+
+                            I've created a video showing the process of creating a bucket and setting up IAM permissions
+                            here:
+                        </p>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+    </div> <!-- body-wrapper -->
+    <script type="text/javascript"
+            src="assets/js/jquery.js"></script>
+    <script type="text/javascript"
+            src="assets/js/script.js"></script>
+</body>
+
+</html>

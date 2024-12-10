@@ -1,0 +1,9 @@
+{
+    "name": "Support",
+    "alias": "support",
+    "description": "Support ticket system module",
+    "keywords": [],
+    "priority": 0,
+    "providers": ["Modules\\Support\\Providers\\SupportServiceProvider"],
+    "files": []
+}

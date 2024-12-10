@@ -1,0 +1,19 @@
+.qp-card {
+    @apply block
+        bg-white
+        shadow-lg;
+}
+
+.qp-card > img {
+    @apply w-full;
+}
+
+.qp-card-content {
+    @apply p-4;
+}
+
+.qp-card-content > h3 {
+    @apply text-xl font-semibold leading-tight
+        text-darkblue
+        mb-4;
+}

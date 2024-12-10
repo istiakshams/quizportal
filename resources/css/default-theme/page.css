@@ -1,0 +1,7 @@
+/* Page */
+
+/* Page Title */
+.page-title {
+    @apply w-full text-4xl font-extrabold
+        py-8 md:pb-12;
+}

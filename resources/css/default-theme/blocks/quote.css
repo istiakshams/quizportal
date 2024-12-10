@@ -1,0 +1,35 @@
+/* Quote */
+.quote-wrap {
+    @apply max-w-screen-md mx-auto;
+}
+.quote-wrap > blockquote > p {
+    @apply text-xl font-medium text-gray-900 md:text-2xl 
+        dark:text-white;
+}
+
+.quote-wrap > figcaption {
+    @apply flex items-center justify-center space-x-3
+        mt-6;
+}
+
+.quote-wrap > figcaption > img {
+    @apply w-6 h-6 rounded-full;
+}
+
+.quote-wrap > figcaption > .footer {
+    @apply flex items-center 
+        divide-x-2 divide-gray-500 
+        dark:divide-gray-700;
+}
+
+.quote-wrap > figcaption > .footer > .name {
+    @apply font-medium text-gray-900
+        pr-3
+        dark:text-white;
+}
+
+.quote-wrap > figcaption > .footer > .position {
+    @apply text-sm font-light text-gray-500
+        pl-3 
+        dark:text-gray-400;
+}

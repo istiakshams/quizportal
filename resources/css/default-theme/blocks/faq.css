@@ -1,0 +1,5 @@
+/* FAQ */
+
+.faq-wrap {
+    @apply flex;
+}

@@ -1,0 +1,170 @@
+/* 
+ * CSS - Modern Theme
+ */
+
+@import "notifications.css";
+@import "form.css";
+@import "card.css";
+@import "homepage.css";
+@import "dashboard.css";
+
+@import "blog.css";
+@import "page.css";
+
+html,
+body {
+    @apply font-poppins;
+}
+
+p {
+    @apply pb-4;
+}
+
+/* Full Width Container - Master Layout */
+.qp-fullwidth-container {
+    @apply w-full;
+}
+
+/* Container To Center Page Content */
+.qp-container {
+    @apply container mx-auto
+        px-4;
+}
+
+/* Header */
+.qp-header-container {
+    @apply bg-white
+        shadow-md;
+}
+
+.qp-header {
+    @apply w-full mx-auto;
+}
+.header-nav {
+    @apply relative w-full
+        flex flex-row items-center justify-end
+        py-4 lg:py-8;
+}
+
+.qp-navbar {
+    @apply flex flex-wrap items-center justify-between
+    w-full
+    px-0;
+}
+
+.qp-logo {
+    @apply flex items-center;
+}
+
+.qp-logo > img {
+    @apply h-[25px] md:h-[35px] lg:h-[50px];
+}
+
+.qp-collapsible-navbar {
+    @apply lg:!flex flex-grow items-center
+        basis-[100%] lg:basis-auto
+        mt-2 lg:mt-0;
+}
+
+.qp-hamburger-btn {
+    @apply block lg:hidden
+        border-0 
+        px-2 
+        text-black
+        hover:no-underline hover:shadow-none 
+        focus:no-underline focus:shadow-none focus:outline-none focus:ring-0;
+}
+
+.qp-navlinks-wrap {
+    @apply flex flex-col md:flex-row justify-center md:justify-end
+        mb-4 md:mb-0;
+}
+
+.qp-nav-links {
+    @apply inline-block 
+    px-0 py-2 md:px-4 md:py-4
+    text-base font-medium leading-normal text-black 
+    hover:text-primary-600 
+    focus:text-primary-600 focus:outline-none focus:ring-0
+    active:text-primary-600;
+}
+
+.qp-nav-btn {
+    @apply inline-block
+        bg-darkblue
+        hover:bg-darkred 
+        focus:bg-darkred focus:outline-none focus:ring-0 
+        active:bg-darkred motion-reduce:transition-none
+        px-8 py-2
+        mx-0 my-2 md:ml-4 md:my-0
+        text-base font-medium leading-normal text-white
+        transition duration-150 ease-in-out;
+}
+
+/* Content Wrap */
+.qp-content-wrap {
+    @apply w-full
+        mx-auto
+        py-8;
+}
+
+/* Page Header */
+.qp-page-header {
+    @apply w-full
+        mb-8;
+}
+
+/* Page Section */
+.qp-page-section {
+    @apply w-full
+        my-4 md:mt-8 md:mb-12;
+}
+
+.qp-page-section > h1 {
+    @apply font-bold 
+        text-xl md:text-3xl
+        text-darkblue
+        mb-4;
+}
+
+.qp-page-section > h2 {
+    @apply font-bold 
+        text-lg md:text-2xl
+        text-darkblue
+        mb-4;
+}
+
+.qp-page-section > p {
+    @apply font-medium 
+        text-sm md:text-lg
+        mb-4;
+}
+
+.qp-page-section > a,
+.qp-page-section > p > a {
+    @apply text-darkred hover:text-darkblue;
+}
+
+/* Profile */
+.qp-tabs-container {
+    @apply flex items-start justify-start
+    w-full h-screen;
+}
+
+/* Footer */
+.qp-footer-container {
+    @apply bg-darkblue;
+}
+
+.qp-footer {
+    @apply py-8
+        text-white text-sm;
+}
+
+.qp-footer > p {
+    @apply p-0;
+}
+
+.qp-footer a {
+    @apply text-darkred;
+}

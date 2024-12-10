@@ -1,0 +1,29 @@
+/* Dashboard */
+.qp-products-nav {
+    @apply flex flex-col md:flex-row items-end justify-center
+        w-full
+        mb-4
+        space-x-8;
+}
+
+.qp-searchbox {
+    @apply flex flex-row items-center justify-end
+        w-full md:w-1/2;
+}
+
+.qp-categories {
+    @apply flex flex-row items-center justify-end
+        w-full md:w-1/2;
+}
+
+.qp-products-wrap {
+    @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8;
+}
+
+.qp-loading {
+    @apply hidden w-full p-12;
+}
+
+.qp-loading > img {
+    @apply mx-auto;
+}

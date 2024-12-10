@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+    <url>
+        <loc>http://qubixportal.test</loc>
+        <lastmod>2024-11-14T00:00:00+00:00</lastmod>
+
+            </url>
+    <url>
+    
+            </url>
+    <url>
+        <loc>http://qubixportal.test/contact-us</loc>
+        <lastmod>2024-11-07T13:18:19+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://qubixportal.test/about-us</loc>
+        <lastmod>2024-11-03T12:04:02+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://qubixportal.test/privacy-policy</loc>
+        <lastmod>2024-11-03T12:04:12+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://qubixportal.test/terms-and-conditions</loc>
+        <lastmod>2024-11-03T12:04:21+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://qubixportal.test/test-1</loc>
+        <lastmod>2024-11-07T13:49:17+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://qubixportal.test/blog/first-blog-1</loc>
+        <lastmod>2024-11-07T06:50:23+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://qubixportal.test/blog/first-blog-3</loc>
+        <lastmod>2024-11-07T06:50:41+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://qubixportal.test/blog/first-blog-4</loc>
+        <lastmod>2024-11-07T06:50:49+00:00</lastmod>
+
+            </url>
+</urlset>

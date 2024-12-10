@@ -1,0 +1,14 @@
+.qp-profile-box {
+    @apply flex flex-col justify-center items-center
+        bg-white
+        border border-slate-200
+        shadow-sm
+        p-12
+        mr-8 mb-8        
+        rounded-lg;
+}
+
+.qp-profile-avatar {
+    @apply w-[150px]
+        rounded-full;
+}

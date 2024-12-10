@@ -1,0 +1,37 @@
+/* Recent Posts */
+.widget-recent-posts {
+    @apply flex flex-col;
+}
+
+.widget-recent-posts > h2 {
+    @apply text-3xl font-extrabold tracking-tight text-gray-900
+        mb-2
+        p-0
+        dark:text-white;
+}
+
+.recent-posts-items {
+    @apply flex flex-col
+        lg:grid lg:grid-cols-3 lg:gap-4
+        mb-8;
+}
+
+.recent-posts-featured-image {
+    @apply col-span-1 place-content-start
+        pb-2 lg:pb-0;
+}
+
+.recent-posts-featured-image > img {
+    @apply w-full;
+}
+
+.recent-posts-blog-title {
+    @apply col-span-2;
+}
+
+.recent-posts-blog-title > h2 {
+    @apply text-3xl font-bold tracking-tight text-gray-900
+        mb-2
+        p-0
+        dark:text-white;
+}

@@ -1,0 +1,72 @@
+/* Page Section */
+.qp-notification {
+    @apply w-full
+        p-4 md:p-8
+        my-4 md:my-4;
+}
+
+.qp-notification > h1 {
+    @apply font-bold 
+        text-xl md:text-3xl
+        text-darkblue
+        mb-4;
+}
+
+.qp-notification > h2 {
+    @apply font-bold 
+        text-lg md:text-2xl
+        text-darkblue
+        mb-4;
+}
+
+.qp-notification > p {
+    @apply font-medium 
+        text-sm md:text-lg
+        m-0 p-0;
+}
+
+.qp-notification > a,
+.qp-notification > p > a {
+    @apply text-darkred hover:text-darkblue;
+}
+
+.qp-info {
+    @apply bg-blue-100
+        border border-blue-200;
+}
+
+.qp-warning {
+    @apply bg-amber-100
+        border border-amber-200;
+}
+
+.qp-success {
+    @apply bg-green-100
+        border border-green-200;
+}
+
+.qp-error {
+    @apply bg-red-100
+        border border-red-200;
+}
+
+/* System Notifications */
+.error-wrap {
+    @apply w-full
+        text-white
+        bg-red-600	
+        my-4
+        p-4 md:p-8;
+}
+
+.success-wrap {
+    @apply w-full
+        text-white
+        bg-lime-600	
+        my-4 p-12;
+}
+
+.success-wrap > h2,
+.error-wrap > h2 {
+    @apply text-lg md:text-xl font-semibold;
+}

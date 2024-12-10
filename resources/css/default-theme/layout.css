@@ -1,0 +1,53 @@
+/* Section */
+.section-white {
+    @apply bg-white dark:bg-gray-900;
+}
+
+.section-gray {
+    @apply bg-gray-50 dark:bg-gray-800;
+}
+
+.section-wrap {
+    @apply space-y-12 lg:space-y-20
+        max-w-screen-xl
+        px-4 py-8 lg:py-24 lg:px-6
+        mx-auto;
+}
+
+/* Content */
+.content-wrap {
+    @apply flex flex-col
+        lg:grid lg:grid-cols-12 lg:gap-x-12
+        max-w-screen-xl 
+        px-4 pt-20 pb-8 lg:py-16
+        mx-auto;
+}
+
+.content-wrap a {
+    @apply hover:text-purple-800;
+}
+
+/* Columns */
+.row {
+    @apply grid grid-cols-12;
+}
+
+.col {
+    @apply lg:col-span-12;
+}
+
+.col-one-fourth {
+    @apply lg:col-span-3;
+}
+
+.col-one-third {
+    @apply lg:col-span-4;
+}
+
+.col-two-third {
+    @apply lg:col-span-8;
+}
+
+.col-half {
+    @apply lg:col-span-6;
+}

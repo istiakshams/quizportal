@@ -1,0 +1,62 @@
+.footer-wrap {
+    @apply max-w-screen-xl 
+        p-4 py-6 lg:py-16 md:p-8 lg:p-10
+        mx-auto;
+}
+
+.footer-widgets-wrap {
+    @apply grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5;
+}
+
+.footer-widgets > h3 {
+    @apply text-sm font-semibold text-gray-900 uppercase 
+        mb-6
+        dark:text-white;
+}
+
+.footer-widgets > p {
+    @apply text-sm text-gray-500 
+        pb-0
+        dark:text-gray-400;
+}
+
+.footer-widgets > ul {
+    @apply text-gray-500
+        dark:text-gray-400;
+}
+
+.footer-widgets > ul > li {
+    @apply mb-4;
+}
+
+.footer-widgets > ul > li > a {
+    @apply hover:underline;
+}
+
+.footer-logo {
+    @apply flex items-start justify-start 
+        mb-5 
+        text-2xl font-semibold text-gray-900 
+        dark:text-white;
+}
+
+.footer-copyright {
+    @apply text-center;
+}
+
+.footer-copyright > p {
+    @apply block 
+        text-sm text-center text-gray-500 
+        pb-0
+        dark:text-gray-400;
+}
+
+.footer-copyright > ul {
+    @apply flex justify-center space-x-5
+        mt-5;
+}
+
+.footer-copyright > ul > li > a {
+    @apply text-gray-500 hover:text-gray-900 
+        dark:hover:text-white dark:text-gray-400;
+}

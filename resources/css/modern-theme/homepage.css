@@ -1,0 +1,47 @@
+/* Home page */
+.qp-featured-wrap {
+    @apply flex flex-col md:flex-row items-stretch justify-start 
+        w-full
+        my-8
+        space-x-0 md:space-x-12
+        min-h-screen;
+}
+
+.qp-featured-box {
+    @apply flex flex-col items-start justify-start
+        w-full md:w-1/2
+        bg-slate-200
+        p-4 md:p-12
+        mb-8 md:mb-0;
+}
+
+.qp-featured-box > h1 {
+    @apply font-bold 
+        text-xl md:text-3xl
+        text-darkblue
+        mb-4;
+}
+
+.qp-featured-box > h2 {
+    @apply font-bold 
+        text-lg md:text-2xl
+        text-darkblue
+        mb-4;
+}
+
+.qp-featured-box > p {
+    @apply pb-2;
+}
+
+.qp-featured-box > ul {
+    @apply ml-4 mb-8;
+}
+
+.qp-featured-box > ul > li {
+    @apply block relative
+        pl-8 pb-2
+        before:bg-green-tick before:bg-cover
+        before:w-[32px] before:h-[32px]
+        before:absolute before:block
+        before:left-[0px] before:top-[-3px];
+}
