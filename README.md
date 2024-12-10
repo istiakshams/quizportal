@@ -1,6 +1,6 @@
-# Qubix Portal
+# Quiz Portal
 
-A framework for developling SAAS using Laravel quick and easy.
+A Quiz Portal developed using Qubix Portal.
 
 Developed by [Istiak Shams](https://istiakshams.com "Istiak Shams")
 
