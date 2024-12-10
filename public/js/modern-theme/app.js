@@ -15,7 +15,7 @@
   \******************************************/
 /***/ (() => {
 
-eval("// JS - Modern Theme//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sInNvdXJjZXMiOlsid2VicGFjazovLy8uL3Jlc291cmNlcy9qcy9tb2Rlcm4tdGhlbWUvYXBwLmpzPzFhNTUiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gSlMgLSBNb2Rlcm4gVGhlbWVcclxuIl0sIm1hcHBpbmdzIjoiQUFBQSIsImlnbm9yZUxpc3QiOltdLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvbW9kZXJuLXRoZW1lL2FwcC5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/modern-theme/app.js\n");
+eval("// JS - Modern Theme//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvbW9kZXJuLXRoZW1lL2FwcC5qcyIsIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3Jlc291cmNlcy9qcy9tb2Rlcm4tdGhlbWUvYXBwLmpzPzFhNTUiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gSlMgLSBNb2Rlcm4gVGhlbWVcclxuIl0sIm1hcHBpbmdzIjoiQUFBQSIsImlnbm9yZUxpc3QiOltdfQ==\n//# sourceURL=webpack-internal:///./resources/js/modern-theme/app.js\n");
 
 /***/ })
 
