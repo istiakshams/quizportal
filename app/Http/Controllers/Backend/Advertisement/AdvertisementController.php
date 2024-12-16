@@ -92,7 +92,5 @@ class AdvertisementController extends Controller
             'success'=> 'Advertisement deleted successfully.',
             'datatable' => view('backend.advertisements.partials.datatable', compact('advertisements'))->render(),
         ]);
-
-        // return redirect()->back()->with('message', 'Advertisement deleted successfully!');
     }
 }

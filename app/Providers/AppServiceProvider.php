@@ -112,6 +112,67 @@ class AppServiceProvider extends ServiceProvider
         ]
       ]);
 
+      if( Module::isEnabled('Quiz') ) {
+        $event->menu->add([
+          'text'    => 'Quizzes',
+          'icon'    => 'nav-icon fas fa-envelope',                    
+          'classes' => 'text-sm',
+          'can'     => 'Manage Newsletters',
+          'submenu' => [
+            [
+              'text'    => 'All Quizzes',
+              'url'     => 'admin/quizzes',
+              'icon'    => 'nav-icon fa fa-envelope-open',
+              'classes' => 'ml-2 text-sm',
+              'can'     => 'Manage Bulk Email',
+            ],
+            [
+              'text'    => 'Add New Quiz',
+              'url'     => 'admin/quizzes/create',
+              'icon'    => 'nav-icon fa fa-users',
+              'classes' => 'ml-2 text-sm',
+              'can'     => 'Manage Subscribers',
+            ],
+            [
+              'text'    => 'Quiz Categories',
+              'url'     => 'admin/quizzes/categories',
+              'icon'    => 'nav-icon fa fa-users',
+              'classes' => 'ml-2 text-sm',
+              'can'     => 'Manage Subscribers',
+            ],
+          ]
+        ]);
+
+
+        $event->menu->add([
+          'text'    => 'Polls',
+          'icon'    => 'nav-icon fas fa-envelope',                    
+          'classes' => 'text-sm',
+          'can'     => 'Manage Newsletters',
+          'submenu' => [
+            [
+              'text'    => 'All Polls',
+              'url'     => 'admin/polls',
+              'icon'    => 'nav-icon fa fa-envelope-open',
+              'classes' => 'ml-2 text-sm',
+              'can'     => 'Manage Bulk Email',
+            ],
+            [
+              'text'    => 'Add New Poll',
+              'url'     => 'admin/polls/create',
+              'icon'    => 'nav-icon fa fa-users',
+              'classes' => 'ml-2 text-sm',
+              'can'     => 'Manage Subscribers',
+            ],
+          ]
+        ]);
+
+
+
+      }
+        
+
+
       if( Module::isEnabled('Newsletter') ) {
         $event->menu->add([
           'text'    => 'Newsletters',
