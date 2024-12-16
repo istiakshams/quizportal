@@ -120,8 +120,8 @@
           <div class="form-group">
             <label for="is_featured">Featured Blog</label>
             <div class="form-group">
-              <input type="checkbox" name="is_featured" data-bootstrap-switch {{ $blog->is_featured == '1' ? 'checked' :
-              '' }}>
+              <input type="checkbox" name="is_featured" data-bootstrap-switch data-on-text="Yes" data-off-text="No" {{
+                $blog->is_featured == '1' ? 'checked' : '' }}>
             </div>
           </div>
           <div class="form-group">

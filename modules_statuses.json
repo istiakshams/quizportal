@@ -1,6 +1,7 @@
 {
-    "Support": true,
-    "Subscription": true,
-    "Newsletter": true,
-    "Affiliate": true
+    "Support": false,
+    "Subscription": false,
+    "Newsletter": false,
+    "Affiliate": false,
+    "Quiz": true
 }
