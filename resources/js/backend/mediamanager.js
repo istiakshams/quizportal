@@ -107,33 +107,6 @@ window.getNextMediaFiles = function () {
     }
 };
 
-// get the media files via ajax
-window.getSelectedMediaFiles = async function (
-    mediaIds,
-    target = TT.showSelectedFilesDiv
-) {
-    // get media files
-    $.ajax({
-        headers: {
-            "X-CSRF-Token": $('meta[name="csrf-token"]').attr("content"),
-        },
-        type: "GET",
-        data: {
-            mediaIds: mediaIds,
-        },
-        // url: '{{ route('uppy.selectedFiles') }}',
-        url: "/media-manager/get-selected-files",
-        success: function (data) {
-            if ((TT.uploadQty = "single")) {
-                target.children().not(".show-image-preview").remove();
-            }
-
-            target.prepend(data.mediaFiles);
-            // initFeather();
-        },
-    });
-};
-
 // show media manager
 window.showMediaManager = async function (thisWrapper) {
     // handle -> click chose file
@@ -244,6 +217,46 @@ window.showSelectedFilePreviewOnLoad = function () {
     });
 };
 
+// generate preview
+window.generatePreview = function (
+    mediaIds = TT.selectedFiles,
+    target = TT.showSelectedFilesDiv
+) {
+    if (mediaIds && mediaIds != "") {
+        mediaIds = mediaIds.split(",");
+        let mediaAddBtn = target.find(".media-add-btn");
+        mediaAddBtn.remove();
+        getSelectedMediaFiles(mediaIds, target);
+    }
+};
+
+// get the media files via ajax
+window.getSelectedMediaFiles = async function (
+    mediaIds,
+    target = TT.showSelectedFilesDiv
+) {
+    // get media files
+    $.ajax({
+        headers: {
+            "X-CSRF-Token": $('meta[name="csrf-token"]').attr("content"),
+        },
+        type: "GET",
+        data: {
+            mediaIds: mediaIds,
+        },
+        // url: '{{ route('uppy.selectedFiles') }}',
+        url: "/media-manager/get-selected-files",
+        success: function (data) {
+            if ((TT.uploadQty = "single")) {
+                target.children().not(".show-image-preview").remove();
+            }
+
+            target.prepend(data.mediaFiles);
+            // initFeather();
+        },
+    });
+};
+
 // remove (after clicking remove button) selected file in specific pages
 window.removeSelectedFile = function (thisButton, mediaFileId) {
     let removeFileDiv = $(thisButton).closest(".selected-file"); //removeFileDiv.remove();
@@ -265,18 +278,10 @@ window.removeSelectedFile = function (thisButton, mediaFileId) {
         ); // remove active class
         selectedFilesInput.val(tempSelected);
     }
+    choseMediaDiv.append(
+        '<div class="qp-icon-btn media-add-btn rounded-circle"><i class="fas fa-plus"></i></div>'
+    );
     removeFileDiv.remove();
-};
-
-// generate preview
-window.generatePreview = function (
-    mediaIds = TT.selectedFiles,
-    target = TT.showSelectedFilesDiv
-) {
-    if (mediaIds && mediaIds != "") {
-        mediaIds = mediaIds.split(",");
-        getSelectedMediaFiles(mediaIds, target);
-    }
 };
 
 // hide media manager

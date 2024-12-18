@@ -146,6 +146,7 @@
         /**
          * Setup dropzone
          */
+        
         $('#formDropzone').dropzone({
             previewTemplate: $('#dzPreviewContainer').html(),
             url: '/media-manager/add-files',

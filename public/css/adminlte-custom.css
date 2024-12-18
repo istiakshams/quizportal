@@ -39,7 +39,6 @@ label:not(.form-check-label):not(.custom-file-label) {
 }
 
 /* Media Manager */
-
 .qp-media-wrap {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
@@ -1164,7 +1163,6 @@ label:not(.form-check-label):not(.custom-file-label) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
 .qp-logo-image > .qp-image-preview > img {
@@ -1180,11 +1178,6 @@ label:not(.form-check-label):not(.custom-file-label) {
     background-color: #dfe3e8;
     padding: 10px;
     margin-bottom: 10px;
-}
-
-.qp-remove > i:hover {
-    color: red;
-    cursor: pointer;
 }
 
 .qp-icon-btn-wrap {
@@ -1212,14 +1205,6 @@ label:not(.form-check-label):not(.custom-file-label) {
     cursor: pointer;
 }
 
-.qp-green {
-    background-color: green;
-}
-
-.qp-red {
-    background-color: red;
-}
-
 .qp-icon-btn > span {
     width: 100%;
     height: 100%;
@@ -1228,6 +1213,55 @@ label:not(.form-check-label):not(.custom-file-label) {
 
 .qp-icon-btn:hover {
     background-color: #ddd;
+}
+
+.qp-green {
+    background-color: green;
+}
+
+/* Start - New Update Dec */
+.preview-image {
+    cursor: pointer;
+    border: 2px solid #dfe3e8;
+}
+
+.preview-image:hover {
+    border: 2px solid #007bff;
+}
+
+.media-remove-btn {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #fff;
+    background-color: #dc3545;
+    border-radius: 3px;
+}
+
+.media-remove-btn:hover {
+    background-color: red;
+}
+
+.media-remove-btn > i {
+    font-size: 12px;
+}
+
+/* END - New Update Dec */
+
+.qp-remove > i:hover {
+    color: red;
+    cursor: pointer;
 }
 
 /* Flags */
