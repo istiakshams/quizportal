@@ -9,7 +9,8 @@
         <p class="small"><a href="/admin">Dashboard</a> / <a href="/admin/quizzes">Quizzes</a> / All Quizzes</p>
     </div> <!-- /.col -->
     <div class="col-6">
-        <p><a href="/admin/quizzes/create" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add New</a>
+        <p><a href="/admin/quizzes/create" class="btn btn-flat btn-primary float-right"><i class="fas fa-plus"></i> Add
+                New</a>
         </p>
     </div> <!-- /.col -->
 </div> <!-- /.row -->

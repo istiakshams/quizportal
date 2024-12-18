@@ -308,9 +308,10 @@
 
             <div class="card card-default">
                 <div class="card-body">
-                    <button type="submit" name="saveQuiz" class="btn btn-primary" id="saveQuiz"><i
+                    <button type="submit" name="saveQuiz" class="btn btn-flat btn-primary" id="saveQuiz"><i
                             class="far fa-save"></i> Save Quiz</button>
-                    <a class="btn btn-secondary float-right" href="/admin/quizzes"><i class="fas fa-share"></i> Back</a>
+                    <a class="btn btn-flat btn-secondary float-right" href="/admin/quizzes"><i class="fas fa-share"></i>
+                        Back</a>
                 </div> <!-- /.card-body -->
             </div> <!-- /.card -->
         </div> <!-- /.col -->
@@ -388,6 +389,16 @@
             height: 100, // set editor height    
         })
         $("[name='is_featured']").bootstrapSwitch(false);
+
+        $('#status').on('change', function() {
+            var status = this.value;
+            if( status == 'published' ) {
+                $('#updateBlog').html('<i class="far fa-save"></i> Publish Blog');
+            }
+            else if( status == 'draft' ) {
+                $('#updateBlog').html('<i class="far fa-save"></i> Save Draft');
+            }
+        });
     });
 </script>
 @stop

@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 
+use Illuminate\Support\Facades\DB;
 
 class BlogCategoryController extends Controller
 {
@@ -99,10 +100,43 @@ class BlogCategoryController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy($id)
-    {
+    {                
+        // Category
         $category = BlogCategory::findOrFail($id);
+
+        // Prevent Deletion if Default Category
+        if( $category->isDefault == 1 ) {
+            return redirect()->back()->with('error', 'Cannot delete default Category!');
+        }
+
+        // Detach Blogs
+        foreach( $category->blogs as $blog ) {
+            $blog->categories()->detach($category->id);
+
+            // Set Default if blog has no category
+            if( $blog->categories->count() == 0 ) {
+                $defaultCategory = BlogCategory::where('isDefault', 1)->first();
+                $blog->categories()->sync($defaultCategory->id);
+            }
+        }
+
+        // Delete Catergory
         $category->delete();
 
         return redirect()->back()->with('message', 'Category deleted successfully!');
     }
+
+
+    /**
+     * Set default category
+     */
+    public function setDefault($id)
+    {   
+        // dd($id);
+        DB::table('blog_categories')->update(array('isDefault' => 0));                
+        DB::table('blog_categories')->where('id', $id)->update(array('isDefault' => 1));
+        
+        return redirect()->back()->with('message', 'Default category updated successfully!');
+    }
+
 }

@@ -124,8 +124,8 @@
           <div class="form-group">
             <label for="status">Status</label>
             <select name="status" class="form-control" id="status" placeholder="Select blog status">
-              <option value="draft">Draft</option>
-              <option value="published" selected="selected">Published</option>
+              <option value="draft" selected="selected">Draft</option>
+              <option value="published">Published</option>
             </select>
           </div>
         </div> <!-- /.card-body -->
@@ -134,8 +134,9 @@
       <div class="card card-default">
         <div class="card-body">
           <div class="form-group">
-            <button type="submit" name="saveBlog" class="btn btn-primary" id="saveBlog">Save Blog</button>
-            <a class="btn btn-secondary float-right" href="/admin/blogs">Back</a>
+            <button type="submit" name="saveBlog" class="btn btn-flat btn-primary" id="saveBlog"><i
+                class="far fa-save"></i> Save Draft</button>
+            <a class="btn btn-flat btn-secondary float-right" href="/admin/blogs"><i class="fas fa-share"></i> Back</a>
           </div>
         </div> <!-- /.card-body -->
       </div> <!-- /.card -->
@@ -166,6 +167,16 @@
     })
 
     $("[name='is_featured']").bootstrapSwitch(false);
+
+    $('#status').on('change', function() {            
+      var status = this.value;            
+      if( status == 'published' ) {            
+        $('#saveBlog').html('<i class="far fa-save"></i> Publish Blog');            
+      }            
+      else if( status == 'draft' ) {            
+        $('#saveBlog').html('<i class="far fa-save"></i> Save Draft');            
+      }            
+    });
 });
 </script>
 @stop
