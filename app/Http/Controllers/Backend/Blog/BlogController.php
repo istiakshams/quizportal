@@ -56,7 +56,8 @@ class BlogController extends Controller
         
         $blog = Blog::create($attributes);
         $blog->categories()->attach($attributes['categories']);
-        return redirect()->back()->with('message', 'New blog added successfully!');
+        return redirect('/admin/blogs/'.$blog->id.'/edit')->with('message', 'New blog added successfully!');
+        // return redirect()->back()->with('message', 'New blog added successfully!');
     }
 
     /**

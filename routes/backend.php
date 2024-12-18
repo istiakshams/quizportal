@@ -29,6 +29,7 @@ Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'verified']], funct
     
   # blogs      
   Route::resource('blogs', BlogController::class);
+  Route::post('blog-categories/set-default/{id}', [BlogCategoryController::class, 'setDefault']);
   Route::resource('blog-categories', BlogCategoryController::class);
   
   # media manager
@@ -39,7 +40,6 @@ Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'verified']], funct
   Route::get('newsletters/subscribers', [NewsletterController::class, 'storeHeaderSetting']);
 
   # members
-
   Route::resource('members/roles', RoleController::class);
   Route::resource('members/permissions', PermissionController::class);
   Route::get('members/admins', [MemberController::class, 'admins']);

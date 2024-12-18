@@ -138,8 +138,9 @@
       <div class="card card-default">
         <div class="card-body">
           <div class="form-group">
-            <button type="submit" name="updateBlog" class="btn btn-primary" id="updateBlog">Update Blog</button>
-            <a class="btn btn-secondary float-right" href="/admin/blogs">Back</a>
+            <button type="submit" name="updateBlog" class="btn btn-flat btn-primary" id="updateBlog"><i
+                class="far fa-save"></i> {{ $blog->status == 'draft' ? 'Save Draft' : 'Publish Blog' }}</button>
+            <a class="btn btn-flat btn-secondary float-right" href="/admin/blogs"><i class="fas fa-share"></i> Back</a>
           </div>
         </div> <!-- /.card-body -->
       </div> <!-- /.card -->
@@ -154,7 +155,7 @@
 @section('adminlte_js')
 <script>
   // runs when the document is ready --> for media files
-    $(document).ready(function() {
+  $(document).ready(function() {
     getChosenFilesCount();
     showSelectedFilePreviewOnLoad();
   });
@@ -171,6 +172,17 @@
     })
 
     $("[name='is_featured']").bootstrapSwitch(false);
+
+    $('#status').on('change', function() {
+      var status = this.value;
+      if( status == 'published' ) {
+        $('#updateBlog').html('<i class="far fa-save"></i> Publish Blog');
+      }
+      else if( status == 'draft' ) {
+        $('#updateBlog').html('<i class="far fa-save"></i> Save Draft');
+      }
+    });
+
 });
 </script>
 @stop

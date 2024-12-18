@@ -16,14 +16,15 @@
       <div class="card-header">
         <h3 class="card-title">Blog Categories</h3>
       </div> <!-- /.card-header -->
-      <div class="card-body">
-        <table id="CategoriesTable" class="table table-bordered table-striped">
+      <div class="card-body table-responsive">
+        <table id="CategoriesTable" class="table table-hover">
           <thead>
             <tr>
               <th width="5%">ID</th>
               <th>Name</th>
-              <th width="5%"></th>
-              <th width="5%"></th>
+              <th width="12%">Default Categroy</th>
+              <th width="8%"></th>
+              <th width="8%"></th>
             </tr>
           </thead>
           <tbody>
@@ -31,13 +32,30 @@
             <tr>
               <td width="5%">{{ $category->id }}</td>
               <td>{{ $category->name }}</td>
-              <td><a href="/admin/blog-categories/{{ $category->id }}/edit" class="btn btn-primary">Edit</td>
               <td>
+                @if( $category->isDefault == 1 )
+                <button type="submit" class="btn btn-flat btn-block btn-secondary">Default Category</button>
+                @else
+                <form action="/admin/blog-categories/set-default/{{ $category->id }}" method="post">
+                  {{ csrf_field() }}
+                  <button type="submit" class="btn btn-flat btn-block btn-primary">Set Default</button>
+                </form>
+                @endif
+              </td>
+              <td><a href="/admin/blog-categories/{{ $category->id }}/edit"
+                  class="btn btn-flat btn-block btn-primary"><i class="far fa-edit"></i> Edit</td>
+              <td>
+                @if( $category->isDefault == 1 )
+                <button type="submit" class="btn btn-flat btn-block btn-secondary"><i class="far fa-trash-alt"></i>
+                  Delete</button>
+                @else
                 <form action="/admin/blog-categories/{{ $category->id }}" method="post">
                   {{ method_field('DELETE') }}
                   {{ csrf_field() }}
-                  <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger">Delete</button>
+                  <button type="submit" onclick="return confirm('Are you sure?')"
+                    class="btn btn-flat btn-block btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
                 </form>
+                @endif
               </td>
             </tr>
             @endforeach
@@ -46,6 +64,7 @@
             <tr>
               <th>ID</th>
               <th>Name</th>
+              <th></th>
               <th></th>
               <th></th>
             </tr>
@@ -75,7 +94,7 @@
         <!-- /.card-body -->
         <div class="card-footer">
           <div class="form-group">
-            <button type="submit" name="saveCategory" class="btn btn-primary" id="saveCategory">Save</button>
+            <button type="submit" name="saveCategory" class="btn btn-flat btn-primary" id="saveCategory">Save</button>
           </div>
         </div>
       </form>
@@ -95,12 +114,15 @@
       'info'        : true,
       'autoWidth'   : false,
       "columnDefs": [{
-        "targets": [2,3],
+        "targets": [2,3,4],
         "orderable": false
       }]
-    })
+    });
+
+
   })
 </script>
 @stop
 @section('plugins.jQuery-UI', true)
 @section('plugins.Datatables', true)
+@section('plugins.BootstrapSwitch', true)
