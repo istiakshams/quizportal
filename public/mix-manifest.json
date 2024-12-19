@@ -1,10 +1,11 @@
 {
-    "/js/app.js": "/js/app.js",
+    "/js/backend/app.js": "/js/backend/app.js",
+    "/js/backend/custom.js": "/js/backend/custom.js",
     "/js/default-theme/app.js": "/js/default-theme/app.js",
     "/js/modern-theme/app.js": "/js/modern-theme/app.js",
-    "/js/backend/app.js": "/js/backend/app.js",
     "/css/default-theme/app.css": "/css/default-theme/app.css",
     "/css/modern-theme/app.css": "/css/modern-theme/app.css",
-    "/css/app.css": "/css/app.css",
-    "/css/setup/style.css": "/css/setup/style.css"
+    "/css/backend/custom.css": "/css/backend/custom.css",
+    "/css/setup/style.css": "/css/setup/style.css",
+    "/css/backend/app.css": "/css/backend/app.css"
 }

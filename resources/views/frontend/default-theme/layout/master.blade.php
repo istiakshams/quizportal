@@ -9,7 +9,6 @@
   <title>@yield('title', getSetting('system_title'))</title>
   <meta name="description" content="@yield('seo_description', getSetting('meta_description', ''))">
   <meta name="keywords" content="{{ getSetting('meta_keywords', '') }}">
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/default-theme/app.css') }}" rel="stylesheet">
   <link rel="shortcut icon" href="{{ asset('images/favicons/favicon.ico') }}" />
   <link rel="preconnect" href="https://fonts.googleapis.com">

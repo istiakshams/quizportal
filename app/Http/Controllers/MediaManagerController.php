@@ -25,14 +25,14 @@ class MediaManagerController extends Controller
             $mediaFiles = $mediaFiles->where('media_type', $type);
         }
 
-        $recentFiles = $mediaFiles->take(4)->get();
+        $recentFiles = $mediaFiles->take(6)->get();
         $recentFileIds = $recentFiles->pluck('id');
 
         if ($request->searchKey != null) {          
             $searchKey = $request->searchKey;
             $mediaFiles = $mediaFiles->where('media_name', 'like', '%' . $request->searchKey . '%');
         }
-        $mediaFiles  = $mediaFiles->whereNotIn('id', $recentFileIds)->paginate(paginationNumber(12))->appends(request()->query());
+        $mediaFiles  = $mediaFiles->whereNotIn('id', $recentFileIds)->paginate(paginationNumber(20))->appends(request()->query());
         // $mediaFiles  = $mediaFiles->whereNotIn('id', $recentFileIds)->paginate(paginationNumber(30))->appends(request()->query());
 
         return [

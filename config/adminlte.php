@@ -278,8 +278,8 @@ return [
     */
 
     'enabled_laravel_mix' => false,
-    'laravel_mix_css_path' => 'css/app.css',
-    'laravel_mix_js_path' => 'js/app.js',
+    'laravel_mix_css_path' => 'css/backend/app.css',
+    'laravel_mix_js_path' => 'js/backend/app.js',
 
     /*
     |--------------------------------------------------------------------------
@@ -439,6 +439,31 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '/vendor/bootstrap-switch/js/bootstrap-switch.min.js',
+                ],
+            ],
+        ],
+        'Moment' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '/vendor/moment/moment-with-locales.min.js',
+                ],
+            ],
+        ],
+        'DateRangePicker' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '/vendor/daterangepicker/daterangepicker.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '/vendor/daterangepicker/daterangepicker.js',
                 ],
             ],
         ],

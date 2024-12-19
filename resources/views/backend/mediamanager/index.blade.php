@@ -4,7 +4,7 @@
 
 @section('content_header')
 <div class="row">
-  <div class="col-6">
+  <div class="col-12 col-md-6">
     <h1>Media Manager</h1>
   </div> <!-- /.col -->
   <div class="col-6">
@@ -33,6 +33,9 @@
 <script>
   $(document).ready(function() {
     getMediaFiles();
+
+    // Disable upload button on load
+    $('#uploadMediaFile').prop("disabled",true);
   });
 </script>
 @endsection

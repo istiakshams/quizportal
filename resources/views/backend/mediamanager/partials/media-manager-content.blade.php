@@ -1,20 +1,6 @@
 <div class="row mb-4">
-    {{-- recent uploads --}}
-    <div class="col-12 col-lg-6">
-        <div class="card card-default">
-            <div class="card-header">
-                <h3 class="card-title">Recent Uploads</h3>
-            </div> <!-- /.card-header -->
-            <div class="card-body">
-                <div class="row g-2 recent-uploads qp-media-wrap">
-                    {{-- data will come from ajax response --}}
-                </div>
-            </div>
-        </div>
-    </div>
-
     {{-- uploader --}}
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-xl-4">
         <div class="card card-default">
             <div class="card-header">
                 <h3 class="card-title">Upload New Media</h3>
@@ -48,11 +34,24 @@
                         </div>
                         <div class="invalid-feedback fw-bold">Please upload an image.</div>
                     </div>
-                    <button class="btn btn-primary" id="formSubmit" type="submit">
-                        <span class="spinner-border spinner-border-sm d-none me-2" aria-hidden="true"></span>
-                        Upload
-                    </button>
+                    <button class="btn btn-flat btn-primary" id="uploadMediaFile" type="submit"><i
+                            class="fas fa-upload"></i>
+                        Upload</button>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    {{-- recent uploads --}}
+    <div class="col-12 col-xl-8">
+        <div class="card card-default">
+            <div class="card-header">
+                <h3 class="card-title">Recent Uploads</h3>
+            </div> <!-- /.card-header -->
+            <div class="card-body">
+                <div class="recent-uploads media-wrap">
+                    {{-- data will come from ajax response --}}
+                </div>
             </div>
         </div>
     </div>
@@ -76,7 +75,7 @@
                                 </div>
                             </div>
                             <div class="qp-search-btn">
-                                <button type="submit" class="btn btn-secondary">
+                                <button type="submit" class="btn btn-flat btn-primary">
                                     <i class="fas fa-search"></i>
                                     Search
                                 </button>
@@ -86,7 +85,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="previous-uploads qp-media-wrap">
+                        <div class="previous-uploads media-wrap">
                             {{-- data will come from ajax response --}}
                         </div>
                     </div>
@@ -94,8 +93,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="mt-3 load-more-media d-none">
-                            <button class="btn btn-primary" onclick="getNextMediaFiles()">
-                                <span> <i data-feather="refresh-cw" class="me-2" width="18"></i>Load More</span>
+                            <button class="btn btn-flat btn-primary" onclick="getNextMediaFiles()">
+                                <span> <i class="fas fa-sync"></i> Load More</span>
                             </button>
                         </div>
                     </div>

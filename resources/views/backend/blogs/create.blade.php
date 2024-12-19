@@ -68,28 +68,7 @@
           <h3 class="card-title">Featured Image</h3>
         </div> <!-- /.card-header -->
         <div class="card-body">
-          <div class="form-group">
-            <input type="hidden" name="types[]" value="featured_image">
-            <div class="qp-image-drop rounded">
-              <!-- choose media -->
-              <div class="qp-featured-image show-selected-files">
-                <div class="show-image-preview" data-toggle="offcanvas" data-target="#offcanvasBottom"
-                  onclick="showMediaManager(this)" data-selection="single">
-                  <input type="hidden" name="featured_image" value="{{ old('featured_image') }}">
-                  @if( old('featured_image') == null )
-                  <div class="qp-icon-btn qp-green rounded-circle">
-                    <i class="fas fa-plus"></i>
-                  </div>
-                  @else
-                  <div class="qp-icon-btn qp-green rounded-circle">
-                    <i class="fas fa-upload"></i>
-                  </div>
-                  @endif
-                </div>
-              </div>
-              <!-- choose media -->
-            </div>
-          </div>
+          @include('backend.partials.media-input', ['value' => 'featured_image', 'image' => ''])
         </div> <!-- /.card-body -->
       </div> <!-- /.card -->
       <div class="card card-default">
@@ -133,11 +112,9 @@
 
       <div class="card card-default">
         <div class="card-body">
-          <div class="form-group">
-            <button type="submit" name="saveBlog" class="btn btn-flat btn-primary" id="saveBlog"><i
-                class="far fa-save"></i> Save Draft</button>
-            <a class="btn btn-flat btn-secondary float-right" href="/admin/blogs"><i class="fas fa-share"></i> Back</a>
-          </div>
+          <button type="submit" name="saveBlog" class="btn btn-flat btn-primary" id="saveBlog"><i
+              class="far fa-save"></i> Save Draft</button>
+          <a class="btn btn-flat btn-secondary float-right" href="/admin/blogs"><i class="fas fa-share"></i> Back</a>
         </div> <!-- /.card-body -->
       </div> <!-- /.card -->
     </div> <!-- /.col -->
