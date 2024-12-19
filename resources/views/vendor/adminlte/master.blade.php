@@ -23,23 +23,21 @@
 
     {{-- Base Stylesheets --}}
     @if(!config('adminlte.enabled_laravel_mix'))
-    <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/adminlte.min.css') }}">
 
     @if(config('adminlte.google_fonts.allowed', true))
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,300italic,400italic,600italic">
     @endif
     @else
     <link rel="stylesheet" href="{{ mix(config('adminlte.laravel_mix_css_path', 'css/app.css')) }}">
     @endif
 
     {{-- Customizations --}}
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,300italic,400italic,600italic">
-    <link rel="stylesheet" href="{{ asset('css/adminlte-custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/backend/custom.css') }}">
 
     {{-- Favicons --}}
     <link rel="shortcut icon" href="{{ asset('favicons/favicon.png') }}" />
@@ -116,7 +114,8 @@
     <!-- reSubmit modal -->
     @include('backend.modals.reSubmitModal')
 
-    <script src="{{ asset('js/backend/app.js') }}"></script>
+    {{-- Custom JS --}}
+    <script src="{{ asset('js/backend/custom.js') }}"></script>
 
     {{-- Base Scripts --}}
     @if(!config('adminlte.enabled_laravel_mix'))
@@ -168,10 +167,17 @@
                 this.on('addedfile', function(file) { 
                     $('.dropzone-drag-area').removeClass('is-invalid').next('.invalid-feedback').hide();
     
-                    setTimeout(function(){
+                    setTimeout(function() {
                       myDropzone.removeAllFiles();
-                    },5000);
+                    }, 5000);
+
+                    $('#uploadMediaFile').prop("disabled",false);
                 });
+            },
+            removedfile: function (file) {
+                $('#uploadMediaFile').prop("disabled",true);
+                    // file.previewElement.innerHTML = "";
+                    file.previewElement.parentNode.removeChild(file.previewElement);
             },
             success: function(file, response) 
             {
@@ -190,7 +196,7 @@
         /**
          * Upload Form on submit
          */
-        $('#formSubmit').on('click', function(event) {
+        $('#uploadMediaFile').on('click', function(event) {
             event.preventDefault();
             var $this = $(this);
             

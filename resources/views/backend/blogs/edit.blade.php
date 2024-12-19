@@ -116,11 +116,9 @@
 
       <div class="card card-default">
         <div class="card-body">
-          <div class="form-group">
-            <button type="submit" name="updateBlog" class="btn btn-flat btn-primary" id="updateBlog"><i
-                class="far fa-save"></i> {{ $blog->status == 'draft' ? 'Save Draft' : 'Publish Blog' }}</button>
-            <a class="btn btn-flat btn-secondary float-right" href="/admin/blogs"><i class="fas fa-share"></i> Back</a>
-          </div>
+          <button type="submit" name="updateBlog" class="btn btn-flat btn-primary" id="updateBlog"><i
+              class="far fa-save"></i> {{ $blog->status == 'draft' ? 'Save Draft' : 'Publish Blog' }}</button>
+          <a class="btn btn-flat btn-secondary float-right" href="/admin/blogs"><i class="fas fa-share"></i> Back</a>
         </div> <!-- /.card-body -->
       </div> <!-- /.card -->
     </div> <!-- /.col -->

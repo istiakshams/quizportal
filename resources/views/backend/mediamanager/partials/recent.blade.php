@@ -1,12 +1,9 @@
 @forelse ($recentFiles as $key => $mediaFile)
-<div class="qp-media-item" data-active-file-id="{{ $mediaFile->id }}"
-    onclick="handleSelectedFiles({{ $mediaFile->id }})">
-    <div class="qp-media-img">
+<div class="media-item" data-active-file-id="{{ $mediaFile->id }}" onclick="handleSelectedFiles({{ $mediaFile->id }})">
+    <div class="media-img">
         @if ($mediaFile->media_type == 'image')
         <img src="{{ uploadedAsset($mediaFile->id) }}" class="img-fluid" />
-        @else
         @endif
-
     </div>
     <div class="qp-media-info-wrap p-2">
         <div class="qp-media-info">

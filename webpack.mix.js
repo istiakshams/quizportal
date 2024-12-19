@@ -12,8 +12,13 @@ const mix = require("laravel-mix");
  */
 
 //  Common CSS/JS
-mix.js("resources/js/app.js", "public/js")
-    .postCss("resources/css/app.css", "public/css", [require("tailwindcss")])
+mix.js("resources/js/backend/app.js", "public/js/backend")
+    .postCss("resources/css/backend/app.css", "public/css/backend")
+    .sourceMaps();
+
+// Backend Custom CSS/JS
+mix.js("resources/js/backend/custom.js", "public/js/backend")
+    .postCss("resources/css/backend/custom.css", "public/css/backend")
     .sourceMaps();
 
 // Default Theme
@@ -36,6 +41,3 @@ mix.js("resources/js/modern-theme/app.js", "public/js/modern-theme")
 mix.postCss("resources/css/setup/style.css", "public/css/setup", [
     require("tailwindcss"),
 ]).sourceMaps();
-
-// Backend Custom CSS/JS
-mix.js("resources/js/backend/app.js", "public/js/backend");
