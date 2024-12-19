@@ -1,14 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', 'Members')
+@section('title', $role . ' Members')
 
 @section('content_header')
 <div class="row">
   <div class="col-6">
-    <h1>Members</h1>
+    <h1>{{ $role }} Members</h1>
   </div> <!-- /.col -->
   <div class="col-6">
-    <p><a href="/admin/members/create" class="btn btn-primary float-right">Add New</a></p>
+    <p><a href="/admin/members/create" class="btn btn-flat btn-primary float-right"><i class="fas fa-plus"></i> Add
+        New</a></p>
   </div> <!-- /.col -->
 </div> <!-- /.row -->
 @stop
@@ -21,24 +22,23 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Members</h3>
+        <h3 class="card-title">{{ $role }} Members</h3>
       </div><!-- /.card-header -->
-      <div class="card-body">
-
-        <table id="MembersTable" class="table table-bordered">
+      <div class="card-body table-responsive">
+        <table id="MembersTable" class="table table-hover">
           <thead>
             <tr>
               <th width="5%">ID</th>
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
-              <th>Actrive Package</th>
+              <th>Active Package</th>
               <th>Status</th>
-              <th width="15%"></th>
+              <th width="8%">Action</th>
+              <th width="8%">Action</th>
             </tr>
           </thead>
           <tbody>
-
             @foreach( $users as $user )
             <tr>
               <td width="5%">{{ $user->id }}</td>
@@ -48,23 +48,20 @@
               <td>Packages</td>
               <td>Status</td>
               <td>
-                <div class="row">
-                  <div class="col-md-6 text-center">
-                    <a href="/admin/members/{{ $user->id }}/edit" class="btn btn-primary">Edit</a>
-                  </div>
-                  <div class="col-md-6 text-center">
+                <a href="/admin/members/{{ $user->id }}/edit" class="btn btn-flat btn-block btn-primary"><i
+                    class="far fa-edit"></i> Edit</a>
+              </td>
+              <td>
+                <form action="/admin/members/{{ $user->id }}" method="post">
+                  {{ method_field('DELETE') }}
+                  {{ csrf_field() }}
+                  <button type="submit" class="btn btn-flat btn-block btn-danger"><i class="far fa-trash-alt"></i>
+                    Delete</a>
+                </form>
 
-                    <form action="/admin/members/{{ $user->id }}" method="post">
-                      {{ method_field('DELETE') }}
-                      {{ csrf_field() }}
-                      <button type="submit" class="btn btn-danger">Delete</a>
-                    </form>
-                  </div>
-                </div>
               </td>
             </tr>
             @endforeach
-
           </tbody>
           <tfoot>
             <tr>
@@ -72,13 +69,13 @@
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
-              <th>Actrive Package</th>
+              <th>Active Package</th>
               <th>Status</th>
-              <th width="15%"></th>
+              <th>Action</th>
+              <th>Action</th>
             </tr>
           </tfoot>
         </table>
-
       </div> <!-- /.card-body -->
     </div> <!-- /.card -->
   </div> <!-- /.col -->
@@ -97,7 +94,7 @@
       'info'        : true,
       'autoWidth'   : false,
       "columnDefs": [{
-        "targets": [6,7,8],
+        "targets": [6,7],
         "orderable": false
       }]
     })

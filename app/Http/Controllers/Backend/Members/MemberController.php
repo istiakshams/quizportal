@@ -37,21 +37,24 @@ class MemberController extends Controller
         })
         ->get();
         // dd($users);
-        return view('backend.members.index', compact('users'));
+        $role = 'All';
+        return view('backend.members.index', compact('users', 'role'));
     }
 
     /**
      * Display a listing of the resource.
      */
-    public function admins()
+    public function list($role = 'Member')
     {
+        $role = ucfirst($role);
+        $rolesArr = array($role);
         $users = User::with("roles")
-        ->whereHas("roles", function($q) {
-            $q->whereIn("name", ["Admin"]);
+        ->whereHas("roles", function($q) use ($rolesArr) {
+            $q->whereIn("name", $rolesArr);
         })
         ->get();
         // dd($users);
-        return view('backend.members.index', compact('users'));       
+        return view('backend.members.index', compact('users', 'role'));
     }
 
     /**
@@ -100,15 +103,42 @@ class MemberController extends Controller
      */
     public function edit(string $id)
     {
-        //
-    }
+        $roles = Role::get();
+        $user = User::findOrFail($id);
+        return view('backend.members.edit', compact('user', 'roles'));    }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $attributes = $this->validate(request(), [
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => '',
+            'password' => '',
+            'role' => 'required',
+        ]);
+        // dd($attributes);
+
+        $user->name = $attributes['name'];
+        $user->email = $attributes['email'];
+        $user->phone = $attributes['phone'];
+        if( $attributes['password'] != null ) {
+            $user->password = Hash::make($attributes['password']);
+        }
+        $user->save();
+
+        $role = $request['role'];
+        if (isset($role)) {
+            $user->roles()->sync($role);  //If one or more role is selected associate user to roles
+        }
+        else {
+            $user->roles()->detach(); //If no role is selected remove exisiting role associated to a user
+        }
+
+        return redirect()->back()->with('message', 'Member details updated successfully!');
     }
 
     /**
@@ -116,6 +146,9 @@ class MemberController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect()->back()->with('message', 'Member deleted successfully!');
     }
 }

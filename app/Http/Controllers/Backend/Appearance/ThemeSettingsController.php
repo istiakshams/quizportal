@@ -11,6 +11,16 @@ use App\Models\ThemeSettings;
 class ThemeSettingsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display Theme Settings Page
      */
     public function showThemeSettings()

@@ -24,6 +24,16 @@ use App\Models\SystemSettings;
 class SystemSettingsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display General Settings Page
      */
     public function showGeneralSettings()

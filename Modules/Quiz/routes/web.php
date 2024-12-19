@@ -19,7 +19,8 @@ use Modules\Quiz\Http\Controllers\Backend\PollChoiceController;
 */
 
 
-Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'verified']], function () {
+Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'role:Admin|Staff|Teacher']], function () {
+
     Route::resource('quizzes/categories', QuizCategoryController::class)->names('admin.quizzes.categories');
     Route::resource('quizzes', QuizController::class)->names('quizzes');
     Route::get('quizzes/{quiz_id}/questions', [QuestionController::class, 'index'])->name('quizzes.questions');

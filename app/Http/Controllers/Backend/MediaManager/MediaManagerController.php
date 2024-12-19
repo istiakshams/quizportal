@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class MediaManagerController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display Media manager.
      */
     public function index()
