@@ -8,7 +8,17 @@ use Auth;
 use Illuminate\Support\Str;
 
 class MediaManagerController extends Controller
-{
+{ 
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     # get media files
     public function index(Request $request)
     {

@@ -10,6 +10,16 @@ use Nwidart\Modules\Facades\Module;
 class ModuleController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Show module settings page
      */
     public function index()

@@ -15,6 +15,16 @@ use App\Models\BlogCategory;
 class BlogController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    /**
      * Display blog list.
      */
     public function index()

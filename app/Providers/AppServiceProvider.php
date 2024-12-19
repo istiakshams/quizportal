@@ -58,25 +58,25 @@ class AppServiceProvider extends ServiceProvider
             'can'     => 'Manage Blogs',
             'submenu' => [
               [
-                'text'  => 'All Blogs',
-                'url'   => 'admin/blogs',
-                'icon'  => 'nav-icon far fa-list-alt',
+                'text'    => 'All Blogs',
+                'url'     => 'admin/blogs',
+                'icon'    => 'nav-icon far fa-list-alt',
                 'classes' => 'ml-4 text-sm',
-                'can'   => 'Manage Blogs',
+                'can'     => 'Manage Blogs',
               ],
               [
-                'text'  => 'Add New Blog',
-                'url'   => 'admin/blogs/create',
-                'icon'  => 'nav-icon fas fa-file',
+                'text'    => 'Add New Blog',
+                'url'     => 'admin/blogs/create',
+                'icon'    => 'nav-icon fas fa-file',
                 'classes' => 'ml-4 text-sm',
-                'can'   => 'Add Blogs',
+                'can'     => 'Manage Blogs',
               ],
               [
                 'text'    => 'Categories',
                 'url'     => 'admin/blog-categories',
                 'icon'    => 'nav-icon fas fa-tags',
                 'classes' => 'ml-4 text-sm',
-                'can'     => 'Add Categories',
+                'can'     => 'Manage Categories',
               ],
             ]
           ],
@@ -91,14 +91,14 @@ class AppServiceProvider extends ServiceProvider
                 'url'     => 'admin/pages',
                 'icon'    => 'nav-icon fa fa-copy',
                 'classes' => 'ml-4 text-sm',
-                'can'     => 'Add Pages',
+                'can'     => 'Manage Pages',
               ],
               [
                 'text'    => 'Add New Page',
                 'url'     => 'admin/pages/create',
                 'icon'    => 'nav-icon fas fa-file',
                 'classes' => 'ml-4 text-sm',
-                'can'     => 'Add Pages',
+                'can'     => 'Manage Pages',
               ],
             ]
           ],
@@ -117,61 +117,55 @@ class AppServiceProvider extends ServiceProvider
           'text'    => 'Quizzes',
           'icon'    => 'nav-icon fas fa-envelope',                    
           'classes' => 'text-sm',
-          'can'     => 'Manage Newsletters',
+          'can'     => 'Manage Quizzes',
           'submenu' => [
             [
               'text'    => 'All Quizzes',
               'url'     => 'admin/quizzes',
               'icon'    => 'nav-icon fa fa-envelope-open',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Bulk Email',
+              'can'     => 'Manage Quizzes',
             ],
             [
               'text'    => 'Add New Quiz',
               'url'     => 'admin/quizzes/create',
               'icon'    => 'nav-icon fa fa-users',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Subscribers',
+              'can'     => 'Manage Quizzes',
             ],
             [
               'text'    => 'Quiz Categories',
               'url'     => 'admin/quizzes/categories',
               'icon'    => 'nav-icon fa fa-users',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Subscribers',
+              'can'     => 'Manage Quizzes',
             ],
           ]
         ]);
-
 
         $event->menu->add([
           'text'    => 'Polls',
           'icon'    => 'nav-icon fas fa-envelope',                    
           'classes' => 'text-sm',
-          'can'     => 'Manage Newsletters',
+          'can'     => 'Manage Polls',
           'submenu' => [
             [
               'text'    => 'All Polls',
               'url'     => 'admin/polls',
               'icon'    => 'nav-icon fa fa-envelope-open',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Bulk Email',
+              'can'     => 'Manage Polls',
             ],
             [
               'text'    => 'Add New Poll',
               'url'     => 'admin/polls/create',
               'icon'    => 'nav-icon fa fa-users',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Subscribers',
+              'can'     => 'Manage Polls',
             ],
           ]
         ]);
-
-
-
-      }
-        
-
+      }      
 
       if( Module::isEnabled('Newsletter') ) {
         $event->menu->add([
@@ -185,14 +179,14 @@ class AppServiceProvider extends ServiceProvider
               'url'     => 'admin/newsletters/send-newsletter',
               'icon'    => 'nav-icon fa fa-envelope-open',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Bulk Email',
+              'can'     => 'Manage Newsletters',
             ],
             [
               'text'    => 'Subscribers',
               'url'     => 'admin/newsletters/subscribers',
               'icon'    => 'nav-icon fa fa-users',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Subscribers',
+              'can'     => 'Manage Newsletters',
             ],
           ]
         ]);
@@ -211,14 +205,14 @@ class AppServiceProvider extends ServiceProvider
               'url'     => 'admin/support/tickets',
               'icon'    => 'nav-icon fa fa-clipboard',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Tickets',
+              'can'     => 'Manage Support',
             ],
             [
               'text'    => 'Categories',
               'url'     => 'admin/support/categories',
               'icon'    => 'nav-icon fa fa-tags',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Ticket Categories',
+              'can'     => 'Manage Support',
             ],
             [
               'text'    => 'Settings',
@@ -250,7 +244,7 @@ class AppServiceProvider extends ServiceProvider
               'url'     => 'admin/subscriptions/packages',
               'icon'    => 'nav-icon fa fa-box',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Subscriptions Packages',
+              'can'     => 'Manage Subscriptions',
             ],
             [
               'text'    => 'Subscription Settings',
@@ -267,7 +261,7 @@ class AppServiceProvider extends ServiceProvider
         'text'    => 'Members',            
         'icon'    => 'nav-icon fas fa-users',
         'classes' => 'text-sm',
-        'can'     => 'Manage Members',          
+        'can'     => 'Manage Members',
         'submenu' => [
           [
             'text'    => 'Members',
@@ -276,9 +270,30 @@ class AppServiceProvider extends ServiceProvider
             'classes' => 'ml-2 text-sm',
             'can'     => 'Manage Members',
           ],
-          [            
+          [
             'text'    => 'Admins',
-            'url'     => 'admin/members/admins',
+            'url'     => 'admin/members/list/admin',
+            'icon'    => 'nav-icon fas fa-user-tie',
+            'classes' => 'ml-2 text-sm',
+            'can'     => 'Manage Admins',
+          ],
+          [
+            'text'    => 'Staffs',
+            'url'     => 'admin/members/list/staff',
+            'icon'    => 'nav-icon fas fa-user-tie',
+            'classes' => 'ml-2 text-sm',
+            'can'     => 'Manage Admins',
+          ],
+          [
+            'text'    => 'Teachers',
+            'url'     => 'admin/members/list/teacher',
+            'icon'    => 'nav-icon fas fa-user-tie',
+            'classes' => 'ml-2 text-sm',
+            'can'     => 'Manage Admins',
+          ],
+          [
+            'text'    => 'Students',
+            'url'     => 'admin/members/list/student',
             'icon'    => 'nav-icon fas fa-user-tie',
             'classes' => 'ml-2 text-sm',
             'can'     => 'Manage Admins',
@@ -319,38 +334,32 @@ class AppServiceProvider extends ServiceProvider
               'url'     => 'admin/affiliates/withdraw-requests',
               'icon'    => 'nav-icon fa fa-users',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Withdraw Requests',
+              'can'     => 'Manage Affiliates',
             ],
             [
               'text'    => 'Earning Histories',
               'url'     => 'admin/affiliates/earning-histories',
               'icon'    => 'nav-icon fa fa-users',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Earning Histories',
+              'can'     => 'Manage Affiliates',
             ],
             [
               'text'    => 'Payment Histories',
               'url'     => 'admin/affiliates/payment-histories',
               'icon'    => 'nav-icon fa fa-users',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Payment Histories',
+              'can'     => 'Manage Affiliates',
             ],
             [
               'text'    => 'Affiliate Settings',
               'url'     => 'admin/affiliates/affiliate-settings',
               'icon'   => 'nav-icon fa fa-users',
               'classes' => 'ml-2 text-sm',
-              'can'     => 'Manage Affiliates Settings',
+              'can'     => 'Manage Affiliates',
             ],
           ]
         ]);
       }
-
-      // $event->menu->add([
-      //   'header'  => 'Reports',
-      //   'can'     => 'Browse Users', 
-      //   'classes' => 'text-sm text-white'
-      // ]);
 
       $event->menu->add([
         'text'    => 'Reports',
@@ -363,16 +372,10 @@ class AppServiceProvider extends ServiceProvider
             'url'     => 'admin/reports/subscription-report',
             'icon'    => 'nav-icon fa fa-bell',
             'classes' => 'ml-2 text-sm',
-            'can'     => 'Manage Subscriptions Report',
+            'can'     => 'Manage Reports',
           ],
         ]
       ]);      
-
-      // $event->menu->add([            
-      //   'header'  => 'Manage Appearance',
-      //   'classes'   => 'text-sm text-white',
-      //   'can'     => 'Browse Users',
-      // ]);
 
       $event->menu->add([
         'text'    => 'Appearance',
@@ -395,20 +398,15 @@ class AppServiceProvider extends ServiceProvider
             'can'     => 'Manage Appearance',
           ],
           [
-            'text'  => 'Footer Settings',
-            'url'   => 'admin/appearance/footer-settings',
-            'icon'  => 'nav-icon fa fa-table',
-            'can'   => 'Manage Appearance',
-            'classes' => 'ml-2 text-sm'
+            'text'    => 'Footer Settings',
+            'url'     => 'admin/appearance/footer-settings',
+            'icon'    => 'nav-icon fa fa-table',
+            'classes' => 'ml-2 text-sm',
+            'can'     => 'Manage Appearance',
           ],
         ]
       ]);
 
-      // $event->menu->add([            
-      //   'header'  => 'Manage Settings',
-      //   'classes' => 'text-sm text-white',
-      //   'can'     => 'Browse Users',          
-      // ]);
       $event->menu->add([
         'text'    => 'System Settings',
         'icon'    => 'nav-icon fas fa-cogs',

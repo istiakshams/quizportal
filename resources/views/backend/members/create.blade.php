@@ -13,7 +13,6 @@
 <!-- form start -->
 <form method="POST" action="/admin/members" enctype="multipart/form-data" role="form">
   {{ csrf_field() }}
-
   <div class="card card-default">
     <div class="card-header">
       <h3 class="card-title">New Member Details</h3>
@@ -45,7 +44,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="text" name="password" class="form-control" id="password" placeholder="Password"
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password"
               value="{{ old('password') }}">
           </div>
         </div> <!-- /.col -->
@@ -68,8 +67,9 @@
     </div> <!-- /.card-body -->
     <div class="card-footer">
       <div class="form-group">
-        <button type="submit" name="saveMember" class="btn btn-primary" id="saveMember">Save</button>
-        <a class="btn btn-success float-right" href="/admin/members"> Back</a>
+        <button type="submit" name="saveMember" class="btn btn-flat btn-primary" id="saveMember"><i
+            class="far fa-save"></i> Save</button>
+        <a class="btn btn-flat btn-secondary float-right" href="/admin/members"><i class="fas fa-share"></i> Back</a>
       </div>
     </div>
   </div> <!-- /.card -->

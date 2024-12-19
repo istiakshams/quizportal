@@ -21,19 +21,30 @@ use App\Http\Controllers\Backend\Module\ModuleController;
 use App\Http\Controllers\Backend\Utility\UtilityController;
 
 
-Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'verified']], function () {
+Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'role:Admin|Staff|Teacher']], function () {
       
   Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
 
-  # blog system      
-    
+});
+
+Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'role:Admin|Staff']], function () {
+      
   # blogs      
   Route::resource('blogs', BlogController::class);
   Route::post('blog-categories/set-default/{id}', [BlogCategoryController::class, 'setDefault']);
   Route::resource('blog-categories', BlogCategoryController::class);
   
+  # pages
+  Route::resource('pages', PageController::class);
+
   # media manager
   Route::resource('media-manager', MediaManagerController::class);
+
+  # reports
+  Route::get('reports/subscription-report', [SubscriptionReportController::class, 'showSubscriptionReport']);
+});
+
+Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'role:Admin']], function () {
 
   # newsletters
   Route::get('newsletters/send-newsletter', [NewsletterController::class, 'showHeaderSettings']);
@@ -42,11 +53,8 @@ Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'verified']], funct
   # members
   Route::resource('members/roles', RoleController::class);
   Route::resource('members/permissions', PermissionController::class);
-  Route::get('members/admins', [MemberController::class, 'admins']);
+  Route::get('members/list/{role}', [MemberController::class, 'list']);
   Route::resource('members', MemberController::class);
-
-  # reports
-  Route::get('reports/subscription-report', [SubscriptionReportController::class, 'showSubscriptionReport']);
 
   # appearance
   Route::get('appearance/theme-settings', [ThemeSettingsController::class, 'showThemeSettings']);
@@ -97,37 +105,5 @@ Route::group( ['prefix' => 'admin', 'middleware' => ['auth', 'verified']], funct
   Route::post('utilities/optimize', [UtilityController::class, 'optimize'])->name('admin.optimize');                
   Route::post('utilities/clear-log', [UtilityController::class, 'clearLog'])->name('admin.clearLog');                
   Route::post('utilities/debug', [UtilityController::class, 'debug'])->name('admin.debug');
-
-
-        // Route::get('/', [BlogController::class, 'index'])->name('admin.blogs.index');
-        // Route::get('/create', [BlogController::class, 'create'])->name('admin.blogs.create');
-        // Route::post('/store', [BlogController::class, 'store'])->name('admin.blogs.store');
-        // Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('admin.blogs.edit');
-        // Route::post('/update', [BlogController::class, 'update'])->name('admin.blogs.update');
-        // Route::get('/delete/{id}', [BlogController::class, 'delete'])->name('admin.blogs.delete');
-
-        // Route::post('/update-popular', [BlogController::class, 'updatePopular'])->name('admin.blogs.updatePopular');
-        // Route::post('/update-status', [BlogController::class, 'updateStatus'])->name('admin.blogs.updateStatus');
-
-        // # categories
-        // Route::get('/categories', [BlogCategoryController::class, 'index'])->name('admin.blogCategories.index');
-        // Route::post('/category', [BlogCategoryController::class, 'store'])->name('admin.blogCategories.store')->middleware('demo');
-        // Route::get('/categories/edit/{id}', [BlogCategoryController::class, 'edit'])->name('admin.blogCategories.edit');
-        // Route::post('/categories/update-category', [BlogCategoryController::class, 'update'])->name('admin.blogCategories.update')->middleware('demo');
-        // Route::get('/categories/delete/{id}', [BlogCategoryController::class, 'delete'])->name('admin.blogCategories.delete')->middleware('demo');
-
-   
-  # pages
-  Route::resource('pages', PageController::class);
-
-  # page system      
-  // Route::group(['prefix' => 'pages'], function () {        
-  //   Route::get('/', [PageController::class, 'index'])->name('admin.pages.index');        
-  //   Route::get('/create', [PageController::class, 'create'])->name('admin.pages.create');        
-  //   Route::post('/store', [PageController::class, 'store'])->name('admin.pages.store');        
-  //   Route::get('/edit/{id}', [PageController::class, 'edit'])->name('admin.pages.edit');       
-  //   Route::post('/update', [PageController::class, 'update'])->name('admin.pages.update');        
-  //   Route::get('/delete/{id}', [PageController::class, 'delete'])->name('admin.pages.delete');
-  // });
 });
 
