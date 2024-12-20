@@ -27,24 +27,10 @@
           <h3 class="card-title">Footer Settings</h3>
         </div> <!-- /.card-header -->
         <div class="card-body">
-          <div class="form-group">
-            <label for="footer_logo">Footer Logo</label>
-            <input type="hidden" name="types[]" value="footer_logo">
-            <div class="qp-image-drop rounded">
-              <!-- choose media -->
-              <div class="qp-logo-image show-selected-files mt-3">
-                <span class="fw-semibold">Choose Footer Logo</span>
-                <div class="show-image-preview" data-toggle="offcanvas" data-target="#offcanvasBottom"
-                  onclick="showMediaManager(this)" data-selection="single">
-                  <input type="hidden" name="footer_logo" value="{{ getThemeSetting('footer_logo') }}">
-                  <div class="qp-icon-btn qp-green rounded-circle">
-                    <i class="fas fa-plus"></i>
-                  </div>
-                </div>
-              </div>
-              <!-- choose media -->
-            </div>
-          </div>
+          {{-- Media Input --}}
+          @include('backend.components.media-input', ['label' => 'Footer Logo', 'value' => 'footer_logo',
+          'image' => getThemeSetting('footer_logo')])
+          {{-- Media Input --}}
           <div class="form-group">
             <label for="footer_about_us">Footer About Us</label>
             <textarea name="footer_about_us"
@@ -72,8 +58,8 @@
       <div class="card card-default">
         <div class="card-body">
           <div class="form-group">
-            <button type="submit" name="saveFooterSettings" class="btn btn-primary"
-              id="saveFooterSettings">Save</button>
+            <button type="submit" name="saveFooterSettings" class="btn btn-flat btn-primary"
+              id="saveFooterSettings">Save Settings</button>
           </div>
         </div> <!-- /.card-body -->
       </div> <!-- /.card -->
