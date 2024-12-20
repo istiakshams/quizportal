@@ -4,11 +4,12 @@
       <div class="footer-widgets col-span-2">
         <h3>About</h3>
         <a href="/" class="footer-logo">
-          @if( empty(getThemeSetting('site_logo_dark')) )
-          <img src="/images/themes/default-theme/logo-default.png" class="logo" alt="Landwind Logo" />
+          @if( empty(getThemeSetting('footer_logo')) )
+          <img src="/images/themes/default-theme/logo-default.png" class="logo"
+            alt="{{ getSetting('system_title') }}" />
           <span class="logo-text">{{ getSetting('system_title') }}</span>
           @else
-          <img src="{{ getImage(getThemeSetting('site_logo_dark')) }}" alt="{{ getSetting('system_title') }}"
+          <img src="{{ getImage(getThemeSetting('footer_logo')) }}" alt="{{ getSetting('system_title') }}"
             class="logo" />
           @endif
         </a>

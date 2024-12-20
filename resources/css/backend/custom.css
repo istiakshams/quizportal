@@ -330,15 +330,15 @@ label:not(.form-check-label):not(.custom-file-label) {
     padding: 5px;
 }
 
-.qp-featured-image > .qp-image-preview > img {
-    padding: 10px;
-}
-
 .qp-image-preview {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.qp-featured-image > .qp-image-preview > img {
+    padding: 10px;
 }
 
 .qp-logo-image > .qp-image-preview > img {
@@ -396,8 +396,9 @@ label:not(.form-check-label):not(.custom-file-label) {
 
 /* Start - New Update Dec */
 .preview-image {
+    background-color: #eee;
     cursor: pointer;
-    border: 2px solid #dfe3e8;
+    border: 2px solid #fff;
 }
 
 .preview-image:hover {

@@ -110,12 +110,13 @@ window.getNextMediaFiles = function () {
 // show media manager
 window.showMediaManager = async function (thisWrapper) {
     // handle -> click chose file
-    let selectedFilesInput = $(thisWrapper).find("input");
+    let selectedFilesInput = $(thisWrapper).parent().find("input");
     TT.uploadQty = $(thisWrapper).data("selection");
     TT.selectedFiles =
         selectedFilesInput.val() != "" ? selectedFilesInput.val() : null;
     TT.selectedFilesInput = selectedFilesInput;
-    TT.showSelectedFilesDiv = $(thisWrapper).parent();
+    // TT.showSelectedFilesDiv = $(thisWrapper).parent();
+    TT.showSelectedFilesDiv = $(thisWrapper);
     // handle -> click chose file
 
     // show media manager showMediaManager()
@@ -123,26 +124,6 @@ window.showMediaManager = async function (thisWrapper) {
 
     // invoke media file fetching function
     await getMediaFiles();
-};
-
-// show media manager for vision
-window.showMediaManagerForVision = async function (thisWrapper) {
-    // handle -> click chose file
-    let selectedFilesInput = $(thisWrapper).find("input");
-    TT.uploadQty = $(thisWrapper).data("selection");
-
-    TT.selectedFiles =
-        selectedFilesInput.val() != "" ? selectedFilesInput.val() : null;
-    TT.selectedFilesInput = selectedFilesInput;
-
-    TT.showSelectedFilesDiv = $("#vision_image");
-    // handle -> click chose file
-
-    // show media manager showMediaManager()
-    $("#offcanvasBottom").modal("show");
-
-    // invoke media file fetching function
-    await getMediaFiles("all", "all", false, "vision");
 };
 
 // add active class to the selected files
@@ -211,8 +192,8 @@ window.showSelectedFilePreview = function () {
 // show selected file preiview on load in specific pages
 window.showSelectedFilePreviewOnLoad = function () {
     $(".show-image-preview").each(function () {
-        let showSelectedFilesDiv = $(this).parent();
-        let selectedFiles = $(this).find("input").val();
+        let showSelectedFilesDiv = $(this);
+        let selectedFiles = $(this).parent().find("input").val();
         generatePreview(selectedFiles, showSelectedFilesDiv);
     });
 };
@@ -244,11 +225,15 @@ window.getSelectedMediaFiles = async function (
         data: {
             mediaIds: mediaIds,
         },
-        // url: '{{ route('uppy.selectedFiles') }}',
         url: "/media-manager/get-selected-files",
         success: function (data) {
             if ((TT.uploadQty = "single")) {
-                target.children().not(".show-image-preview").remove();
+                // target
+                //     .children()
+                //     .not(".show-image-preview")
+                //     .not(".image_id")
+                //     .remove();
+                target.find(".qp-image-preview").remove();
             }
 
             target.prepend(data.mediaFiles);
@@ -260,10 +245,10 @@ window.getSelectedMediaFiles = async function (
 // remove (after clicking remove button) selected file in specific pages
 window.removeSelectedFile = function (thisButton, mediaFileId) {
     let removeFileDiv = $(thisButton).closest(".selected-file"); //removeFileDiv.remove();
-    let showSelectedFilesDiv = removeFileDiv.parent(); // .show-selected-files
-    let choseMediaDiv = showSelectedFilesDiv.find(".show-image-preview"); //choose media button
+    let choseMediaDiv = removeFileDiv.parent(); // .show-image-preview
+    let showSelectedFilesDiv = removeFileDiv.parent().parent(); // .show-selected-files
 
-    let selectedFilesInput = $(choseMediaDiv).find("input");
+    let selectedFilesInput = $(showSelectedFilesDiv).find("input");
     let selectedFiles = selectedFilesInput.val();
 
     if (selectedFiles != null && selectedFiles != "") {
@@ -278,9 +263,11 @@ window.removeSelectedFile = function (thisButton, mediaFileId) {
         ); // remove active class
         selectedFilesInput.val(tempSelected);
     }
+
     choseMediaDiv.append(
         '<div class="qp-icon-btn media-add-btn rounded-circle"><i class="fas fa-plus"></i></div>'
     );
+
     removeFileDiv.remove();
 };
 

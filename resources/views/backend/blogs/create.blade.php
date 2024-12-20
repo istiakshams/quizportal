@@ -68,7 +68,7 @@
           <h3 class="card-title">Featured Image</h3>
         </div> <!-- /.card-header -->
         <div class="card-body">
-          @include('backend.partials.media-input', ['value' => 'featured_image', 'image' => ''])
+          @include('backend.components.media-input', ['value' => 'featured_image', 'image' => ''])
         </div> <!-- /.card-body -->
       </div> <!-- /.card -->
       <div class="card card-default">
